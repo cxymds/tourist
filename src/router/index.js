@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import zy from './zy'
 
 const routes = [
   {
@@ -15,8 +16,16 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
+  // ,
+  // {
+  //   path: '/yuan/zy',
+  //   name: 'zy',
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/yuan/zy.vue')
+  // }
+  ,
+  ...zy
 ]
-
+console.log(routes)
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
