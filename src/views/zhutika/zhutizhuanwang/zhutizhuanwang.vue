@@ -25,9 +25,39 @@
         </div>
         <div class="huijian">huijian</div>
       </div>
-
       <div class="mingcheng">套餐名称：流量包 3000MB</div>
       <div class="qixian">套餐期限：2020/12/30 12:00 PM 到期</div>
+    </div>
+
+    <div class="denglu">
+      <div class="yilianjie">
+        <div class="tu_a">
+          <img
+            class="im"
+            src="http://xmage.club/FqdCl_OC77BriF6exfH8C2m2aKh4"
+            alt=""
+          />
+        </div>
+        <div class="tuwen_a">已连接记录</div>
+      </div>
+      <div class="zhuanwang">
+        <div class="tu_b">
+          <img
+            class="im"
+            src="http://xmage.club/FrF_dZqM4TST8yPLgQSZIrn1a4Ue"
+            alt=""
+          />
+        </div>
+        <div class="tuwen_b">专网激活卡</div>
+      </div>
+    </div>
+
+    <div>
+      <van-tabs v-model="active" animated>
+        <van-tab v-for="index in 2" :title="'选项 ' + index" :key="index">
+          内容 {{ index }}
+        </van-tab>
+      </van-tabs>
     </div>
   </div>
 </template>
@@ -57,7 +87,7 @@
 .luse {
   overflow: hidden;
   width: 100%;
-  height: 321px;
+  height: 300px;
   background-color: #009688;
   background-image: url(http://xmage.club/FnWGQ6q5i7bKObvso17dPX-PvvsY);
 }
@@ -120,11 +150,56 @@
   color: rgba(255, 255, 255, 0.8);
   margin-top: 10px;
 }
+
+.denglu {
+  width: 344px;
+  height: 68px;
+  margin: -34px auto 0;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.yilianjie,
+.zhuanwang {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.tu_a,
+.tu_b {
+  width: 36px;
+  height: 36px;
+  margin: 12px 0 0 30px;
+  border-radius: 50%;
+  position: relative;
+}
+.tu_a {
+  background-color: #45ca35;
+}
+
+.tu_b {
+  background-color: #f5cd02;
+}
+.im {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.tuwen_a,
+.tuwen_b {
+  height: 36px;
+  line-height: 36px;
+  width: 100px;
+  margin: 12px 0 0 10px;
+  font-size: 14px;
+  text-align: left;
+}
+.tuwen_a {
+  border-right: 1px solid #eee;
+}
 </style>
-
-
-
-
 
 <script>
 import { Toast } from "vant";
