@@ -5,6 +5,7 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 
+
 const routes = [
   {
     path: '/',

@@ -1,51 +1,117 @@
 <template>
-  <div id="user">
-    <div class="appone">
-      <div class="left" @click="tab"><img src="http://xmage.club/FtttM4fwr6bB-4ycm1wY0MEpzzBe" alt=""></div>
-      <div class="conter">首次登陆</div>
-    </div>
-    <div class="apptwo">
-      首次登陆请完善您的主题咖个人信息，我们将为您提供更好的服务，快来完善吧
-    </div>
-    <div class="appthree">
-      <div class="touxiang">
-        <img src="http://xmage.club/FoatRPUaRys9DosVqPiGx3toNa83" alt="">
-        <text>点击上传头像</text>
+ <div id="user">
+    <div class="userone">
+      <div class="appone">
+        <div class="left" @click="tab"><img src="http://xmage.club/FtttM4fwr6bB-4ycm1wY0MEpzzBe" alt=""></div>
+        <div class="conter">首次登陆</div>
+      </div>
+      <div class="apptwo">
+        首次登陆请完善您的主题咖个人信息，我们将为您提供更好的服务，快来完善吧
+      </div>
+      <div class="appthree">
+        <div class="touxiang">
+          <img src="http://xmage.club/FoatRPUaRys9DosVqPiGx3toNa83" alt="">
+          <text>点击上传头像</text>
+        </div>
       </div>
     </div>
-    <div class="appfour">
-      <form action="">
-        <input type="text" v-model="loginuser.nicheng" placeholder="昵称">
-        <input type="text" v-model="loginuser.mima" placeholder="密码">
-        <input type="text" v-model="loginuser.queren" placeholder="确认密码">
-        <input type="submit" value="下一步">
-      </form>
+    <div class="usertwo">
+      <van-form @failed="onFailed">
+      <!-- 通过 pattern 进行正则校验 -->
+        <van-field
+          class="one"
+          v-model="state.value1"
+          name="pattern"
+          placeholder="您的昵称"
+          :rules="[{ pattern, message: '请输入汉字' }]"
+        />
+        <van-field
+          v-model="state.value2"
+          name="validator"
+          placeholder="输入密码"
+          :rules="[{ validator, message: '请输入数字字母下划线' }]"
+        />
+        <van-field
+          v-model="state.value3"
+          name="asyncValidator"
+          placeholder="确认密码"
+          :rules="[{ validator: asyncValidator, message: '再次输入正确密码' }]"
+        />
+    <div style="margin: 16px;">
+      <van-button round block type="primary" native-type="submit">
+        提交
+      </van-button>
     </div>
-    <div class="appfif">暂且跳过/后续完善</div>
+    </van-form>
   </div>
+  <div class="userthree">
+    <span>暂且跳过/后续调整</span>
+  </div>
+</div>
 </template>
 <script>
+import { reactive } from 'vue';
+import { Toast } from 'vant';
+
 export default {
-  data(){
-    return{
-      loginuser:{
-        nicheng:'',
-        mima:'',
-        queren:''
-      }
-    }
-  },
   methods:{
     tab(){
       this.$router.push('/');
     }
-  }
-}
+  },
+  setup() {
+    const state = reactive({
+      value1: '',
+      value2: '',
+      value3: '',
+    });
+    const pattern = /[\u4E00-\u9FFF]/;
+    const validator = (val) => /^(([a-zA-Z_])+(\d)+([a-zA-Z0-9]*))+|((\d)+([a-zA-Z_])+([a-zA-Z0-9]*))$/.test(val);
+    // 校验函数可以返回 Promise，实现异步校验
+    const asyncValidator = (val) =>
+      new Promise((resolve) => {
+        Toast.loading('验证中...');
+
+        setTimeout(() => {
+          Toast.clear();
+          resolve(/^(([a-zA-Z_])+(\d)+([a-zA-Z0-9]*))+|((\d)+([a-zA-Z_])+([a-zA-Z0-9]*))$/.test(val));
+        }, 1000);
+      });
+
+    const onFailed = (errorInfo) => {
+      console.log('failed', errorInfo);
+    };
+
+    return {
+      state,
+      pattern,
+      onFailed,
+      validator,
+      asyncValidator,
+    };
+  },
+};
 </script>
 <style lang="less">
-  #user{
+#user{
+  .usertwo{
+    .one{
+      margin-bottom: 65px;
+    }
+  }
+  .userthree{
     width: 100%;
-    height: 800px;
+    height: 50px;
+    margin-top: 30px;
+    span{
+      text-align: center;
+      line-height: 10px;
+      color: rgb(212, 212, 212);
+    }
+  }
+  .userone{
+    width: 100%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     div{
@@ -53,7 +119,7 @@ export default {
       height:90px;
       margin-bottom: 2px ;
     }
-    .appone{
+     .appone{
       flex-direction: row;
       display: flex;
       div{
@@ -65,7 +131,6 @@ export default {
       }
       .left{
         padding-top: 7px;
-
       }
       .conter{
         margin-left: 50px;
@@ -92,33 +157,13 @@ export default {
           margin-top: 3px;
         }
       }
-    }
-    .appfour{
-      flex-grow: 4;
-      form{
-        input{
-          background-color: rgb(246, 246, 246);
-          width: 95%;
-          height: 40px;
-          border-radius: 8px;
-          margin-top: 8px;
-          text-align: center;
-          border: none;
-        }
-        :nth-of-type(1){
-          margin-bottom: 40px;
-
-        }
-        :nth-of-type(4){
-          margin-top: 27px;
-          background-color:#FF9800 ;
-          border-color: #FF9800;
-        }
-      }
-    }
-    .appfif{
-      text-align: center;
-      color: rgb(189, 189, 189);
-    }
   }
+}
+}
+ 
+ 
+
+
+
 </style>
+
