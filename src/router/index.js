@@ -3,6 +3,7 @@ import zy from './zy'
 import tongzhi from './tongzhi'
 import login from '../views/login.vue'
 import recommend from './recommend'
+import nav from './nav'
 
 const routes = [
   {
@@ -30,6 +31,8 @@ const routes = [
   ...tongzhi
   ,
   ...recommend
+  ,
+  ...nav
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
