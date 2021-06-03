@@ -8,8 +8,18 @@
     />
   </div>
 </template>
+
+
+
 <script>
+import { Toast } from "vant";
 export default {
+  setup() {
+    const onClickLeft = () => Toast("返回");
+    return {
+      onClickLeft,
+    };
+  },
   name: "",
   data() {
     return {
@@ -19,19 +29,3 @@ export default {
   methods: {},
 };
 </script>
-
-
-
-
-
-
-import { Toast } from 'vant';
-
-export default {
-  setup() {
-    const onClickLeft = () => Toast('返回');
-    return {
-      onClickLeft,
-    };
-  },
-};

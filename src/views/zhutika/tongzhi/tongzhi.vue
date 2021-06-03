@@ -35,7 +35,16 @@
 </template>
 
 <script>
+import { Toast } from "vant";
 export default {
+  setup() {
+    const onClickLeft = () => Toast("返回");
+    const onClickRight = () => Toast("按钮");
+    return {
+      onClickLeft,
+      onClickRight,
+    };
+  },
   name: "",
   data() {
     return {
@@ -67,19 +76,6 @@ export default {
   methods: {},
 };
 </script>
-
-import { Toast } from 'vant';
-
-export default {
-  setup() {
-    const onClickLeft = () => Toast('返回');
-    const onClickRight = () => Toast('按钮');
-    return {
-      onClickLeft,
-      onClickRight,
-    };
-  },
-};
 
 <style>
 html {
