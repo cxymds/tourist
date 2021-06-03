@@ -1,32 +1,34 @@
 <template>
-  <van-nav-bar
-    title="信息通知"
-    left-text="返回"
-    right-text="标记已读"
-    left-arrow
-    @click-left="onClickLeft"
-    @click-right="onClickRight"
-  />
-  <!-- 预约提醒 -->
-  <div class="kuang" v-for="item in list" :key="item.id">
-    <div class="num1">
-      <div class="left">
-        <div class="xiaotubiao">
-          <img src="{{item.img}}" alt="" />
+  <div>
+    <van-nav-bar
+      title="信息通知"
+      left-text="返回"
+      right-text="标记已读"
+      left-arrow
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
+    <!-- 预约提醒 -->
+    <div class="kuang" v-for="item in list" :key="item.id">
+      <div class="num1">
+        <div class="left">
+          <div class="xiaotubiao">
+            <img :src="item.img" alt="" />
+          </div>
+          <div class="wenzi">{{ item.msg }}</div>
         </div>
-        <div class="wenzi">{{ item.msg }}</div>
+        <div class="right">
+          {{ item.duu }}
+        </div>
       </div>
-      <div class="right">
-        {{ item.duu }}
+      <div class="num2">
+        {{ item.neirong }}
       </div>
-    </div>
-    <div class="num2">
-      {{ item.neirong }}
-    </div>
-    <div class="num3">
-      <div class="chakan">查看详情</div>
-      <div class="tiaozhuan">
-        <img src="http://xmage.club/FnCoMe5uHwYgFG9nbb8dthUfNF2c" alt="" />
+      <div class="num3">
+        <div class="chakan">查看详情</div>
+        <div class="tiaozhuan">
+          <img src="http://xmage.club/FnCoMe5uHwYgFG9nbb8dthUfNF2c" alt="" />
+        </div>
       </div>
     </div>
   </div>
@@ -41,7 +43,7 @@ export default {
         {
           msg: "预约提醒",
           neirong:
-            "您有一条餐饮美食预约即将到来，请您提早前往！时间:2020/12/30 17:30,人数：2人",
+            "您有一条餐饮美食预约即将到来,请您提早前往！时间:2020/12/30 17:30,人数：2人",
           duu: "未读",
           img: "http://xmage.club/FpqtnUEdnyPqyzYwCoyPptFxbT4C",
         },
@@ -104,6 +106,7 @@ html {
   height: 30px;
   position: relative;
   border-bottom: 1px solid rgb(240, 240, 240);
+  margin-top: 10px;
 }
 .num2 {
   height: 79px;
@@ -111,6 +114,7 @@ html {
   color: #999999;
   text-align: left;
   font-size: 14px;
+  text-indent: 20px;
 }
 .num3 {
   height: 30px;
