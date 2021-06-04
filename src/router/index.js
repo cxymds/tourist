@@ -4,7 +4,7 @@ import tongzhi from './tongzhi'
 import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
-
+import release from './Release'
 
 const routes = [
   {
@@ -34,6 +34,8 @@ const routes = [
   ...recommend
   ,
   ...zhutizhuanwang
+  ,
+  ...release
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
