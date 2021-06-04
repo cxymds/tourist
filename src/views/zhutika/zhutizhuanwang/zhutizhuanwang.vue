@@ -23,7 +23,9 @@
             <div>MB</div>
           </div>
         </div>
-        <div class="huijian">huijian</div>
+        <div class="huijian">
+          <img src="http://xmage.club/FvPeInV_SFhhC6YbEuFCj73-gm82" alt="" />
+        </div>
       </div>
       <div class="mingcheng">套餐名称：流量包 3000MB</div>
       <div class="qixian">套餐期限：2020/12/30 12:00 PM 到期</div>
@@ -52,18 +54,87 @@
       </div>
     </div>
 
+    <!-- 横向滚动 功能缺陷 -->
     <div>
       <van-tabs v-model="active" animated>
-        <van-tab v-for="index in 2" :title="'选项 ' + index" :key="index">
-          内容 {{ index }}
+        <van-tab v-for="item in bao" :title="item.id" :key="item.id">
+          <div class="baokuang">
+            <div class="liuliangbao" v-for="liu in list" :key="liu.id">
+              <div class="tianshu">{{ liu.tian }}</div>
+              <div class="xianjia">
+                <div class="xianjia_shu">
+                  {{ liu.xianjia }}
+                  <div class="xianjia_fuhao">￥</div>
+                </div>
+              </div>
+              <div class="yuanjia">￥{{ liu.yuanjia }}</div>
+              <div class="leixing">{{ liu.liexing }}</div>
+            </div>
+          </div>
         </van-tab>
       </van-tabs>
+    </div>
+
+    <!-- 我已经阅读需知 功能缺陷 -->
+    <div class="xuzhi">
+      <van-checkbox
+        id="yueduxuzhi"
+        icon-size="14px"
+        v-model="checked"
+        @click="show = true"
+        >我已经阅读需知</van-checkbox
+      >
+      <van-overlay :show="show">
+        <div class="wrapper" @click.stop>
+          <div class="block">
+            <div class="block_yuedu">阅读上网须知</div>
+            <div>
+              请您仔细阅读上网须知<br />
+              并同意相关事项
+            </div>
+            <div class="block_anniu">
+              <button
+                class="block_button_a"
+                type="primary"
+                @click="show = false"
+              >
+                取消
+              </button>
+              <button class="block_button_b" type="primary">前往</button>
+            </div>
+          </div>
+        </div>
+      </van-overlay>
+    </div>
+
+    <div>
+      <van-button type="primary" block round size="small" id="van_but"
+        >立即购买</van-button
+      >
+    </div>
+
+    <div class="zuijingoumai">
+      <div class="zuijinggoumai_wenzi">最近购买</div>
+
+      <div class="ztj">
+        <div class="zuijinggoumai_jilu">所有记录</div>
+        <div class="zhujingoumai_tiaozhuan">
+          <img src="http://xmage.club/FnCoMe5uHwYgFG9nbb8dthUfNF2c" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="zuijingouman_zhanshi">
+      <van-row justify="center" v-for="zhi in jilu" :key="zhi.id">
+        <van-col span="8">{{ zhi.ming }}</van-col>
+        <van-col span="8">￥{{ zhi.jin }}</van-col>
+        <van-col span="8">{{ zhi.shijian }}</van-col>
+      </van-row>
     </div>
   </div>
 </template>
 
-
 <style scoped>
+/* 主题专网 */
 .navbar {
   height: 44px;
   display: flex;
@@ -94,8 +165,9 @@
 .huijian {
   width: 76px;
   height: 76px;
-  border: 1px solid #000;
   margin: 15px 0 0 50px;
+  background-color: #84d02c;
+  border-radius: 50%;
 }
 .liuliang {
   width: 350px;
@@ -151,6 +223,7 @@
   margin-top: 10px;
 }
 
+/* 已链接记录 */
 .denglu {
   width: 344px;
   height: 68px;
@@ -199,21 +272,237 @@
 .tuwen_a {
   border-right: 1px solid #eee;
 }
+
+/* 横向滚动 功能缺陷 */
+.baokuang {
+  width: 340px;
+  margin: 20px auto 0;
+  height: 136px;
+  /* border: 1px solid #000; */
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+/* 横向滚动时   取消横向滚动的滚动条 */
+.baokuang::-webkit-scrollbar {
+  display: none;
+}
+
+.liuliangbao {
+  display: inline-block;
+  margin-right: 12px;
+  width: 103px;
+  height: 136px;
+  border: 1px solid #ff9800;
+  border-radius: 10px;
+}
+.tianshu {
+  height: 35px;
+  width: 100%;
+  background-color: #ff9800;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.xianjia {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+}
+.xianjia_fuhao {
+  float: left;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.xianjia_shu {
+  font-size: 30px;
+  margin: 0 auto;
+}
+.yuanjia {
+  color: #999999;
+  text-decoration: line-through;
+}
+.leixing {
+  background-color: #1c222a;
+  color: #e3c9a3;
+  width: 90%;
+  border-radius: 5px;
+  margin: 0 auto;
+  height: 25px;
+  margin-top: 5px;
+  line-height: 25px;
+}
+
+/* 我已经阅读须知功能缺陷 */
+.xuzhi {
+  width: 140px;
+  border: 1px solid #000;
+  margin: 20px auto 0;
+}
+.block_yuedu {
+  width: 100px;
+  margin: 20px auto;
+  font-weight: 600;
+}
+.block_anniu {
+  width: 100%;
+  height: 52px;
+  border-radius: 0 0 10px 10px;
+  margin-top: 22px;
+}
+.block_button_a,
+.block_button_b {
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  border: none;
+  border-top: 1px solid #999;
+}
+.block_button_a {
+  color: #999999;
+  border-radius: 0 0 0 10px;
+  border-right: 1px solid #999;
+}
+.block_button_b {
+  color: #007aff;
+  border-radius: 0 0 10px 0;
+}
+
+/* 遮罩 */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 290px;
+  height: 180px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+/* 立即购买 */
+#yueduxuzhi {
+  font-size: 14px;
+}
+#van_but {
+  background-color: #ff9800;
+  width: 220px;
+  margin: 0 auto;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+}
+
+/* 最近购买 */
+.zuijingouman_zhanshi {
+  color: #999999;
+  font-size: 14px;
+}
+
+.zuijingoumai {
+  width: 340px;
+  height: 40px;
+  margin: 10px auto 0;
+}
+.zuijinggoumai_wenzi {
+  height: 100%;
+  line-height: 40px;
+  width: 100px;
+  font-size: 17px;
+  font-weight: 700;
+  float: left;
+}
+.zuijinggoumai_jilu {
+  line-height: 40px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.zhujingoumai_tiaozhuan {
+  width: 14px;
+  height: 14px;
+  margin-top: 13px;
+}
+.zhujingoumai_tiaozhuan > img {
+  width: 14px;
+  height: 14px;
+}
+.ztj {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  float: right;
+}
 </style>
+
+
+
 
 <script>
 import { Toast } from "vant";
+import { ref } from "vue";
 export default {
   setup() {
     const onClickLeft = () => Toast("返回");
+    const checked = ref(false);
+    const show = ref(false);
+
     return {
       onClickLeft,
+      checked,
+      show,
     };
   },
   name: "",
   data() {
     return {
-      list: [{}],
+      bao: [{ id: "流量包" }, { id: "时长包" }],
+      list: [
+        {
+          tian: "200MB",
+          xianjia: "88",
+          yuanjia: "120",
+          liexing: "大咖专享",
+        },
+        {
+          tian: "500MB",
+          xianjia: "188",
+          yuanjia: "238",
+          liexing: "热门选择",
+        },
+        {
+          tian: "1000MB",
+          xianjia: "288",
+          yuanjia: "328",
+          liexing: "大咖专享",
+        },
+        {
+          tian: "3000MB",
+          xianjia: "328",
+          yuanjia: "398",
+          liexing: "至臻特惠",
+        },
+      ],
+      jilu: [
+        {
+          ming: "流量包 3000MB",
+          jin: "88.00",
+          shijian: "2020/12/30",
+        },
+        {
+          ming: "流量包 3000MB",
+          jin: "88.00",
+          shijian: "2020/12/30",
+        },
+        {
+          ming: "流量包 3000MB",
+          jin: "88.00",
+          shijian: "2020/12/30",
+        },
+      ],
     };
   },
   methods: {},
