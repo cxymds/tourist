@@ -9,10 +9,8 @@
         首次登陆请完善您的主题咖个人信息，我们将为您提供更好的服务，快来完善吧
       </div>
       <div class="appthree">
-        <div class="touxiang">
-          <img src="http://xmage.club/FoatRPUaRys9DosVqPiGx3toNa83" alt="">
-          <text>点击上传头像</text>
-        </div>
+        <text>点击上传头像</text>
+        <van-uploader v-model="fileList" multiple  class="file" :max-count="1" />
       </div>
     </div>
     <div class="usertwo">
@@ -52,6 +50,7 @@
 <script>
 import { reactive } from 'vue';
 import { Toast } from 'vant';
+import { ref } from 'vue';
 
 export default {
   methods:{
@@ -60,6 +59,7 @@ export default {
     }
   },
   setup() {
+    const fileList = ref([]);
     const state = reactive({
       value1: '',
       value2: '',
@@ -71,21 +71,19 @@ export default {
     const asyncValidator = (val) =>
       new Promise((resolve) => {
         Toast.loading('验证中...');
-
         setTimeout(() => {
           Toast.clear();
           resolve(/^(([a-zA-Z_])+(\d)+([a-zA-Z0-9]*))+|((\d)+([a-zA-Z_])+([a-zA-Z0-9]*))$/.test(val));
         }, 1000);
       });
-
     const onFailed = (errorInfo) => {
       console.log('failed', errorInfo);
     };
-
     return {
       state,
       pattern,
       onFailed,
+      fileList,
       validator,
       asyncValidator,
     };
@@ -142,23 +140,18 @@ export default {
     }
     .appthree{
       flex-grow: 2;
-      .touxiang{
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background-color:#1667D2 ;
-        margin: 0 auto;
-        img{
-          margin-top: 25px;
-        }
-        text{
-          display: block;
-          color: #fff;
-          margin-top: 3px;
-        }
+      .file{
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: 50px auto;
       }
+      text{
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
   }
-}
 }
  
  
