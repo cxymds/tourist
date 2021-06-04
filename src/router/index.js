@@ -2,6 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import zhiyaun from './zhiyaun'
 import tongzhi from './tongzhi'
 import login from '../views/login.vue'
+import recommend from './recommend'
+import zhutizhuanwang from './zhutizhuanwang'
+
 
 const routes = [
   {
@@ -26,6 +29,10 @@ const routes = [
   ,
   ...zhiyaun,
   ...tongzhi
+  ,
+  ...recommend
+  ,
+  ...zhutizhuanwang
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
