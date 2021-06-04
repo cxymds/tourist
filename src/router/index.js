@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import zy from './zy'
+import zhiyaun from './zhiyaun'
 import tongzhi from './tongzhi'
 import login from '../views/login.vue'
 
@@ -24,8 +24,7 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ '../views/yuan/zy.vue')
   // }
   ,
-  ...zy
-  ,
+  ...zhiyaun,
   ...tongzhi
 ]
 const router = createRouter({
