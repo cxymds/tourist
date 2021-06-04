@@ -276,20 +276,25 @@
 /* 横向滚动 功能缺陷 */
 .baokuang {
   width: 340px;
-  margin: 25px auto 0;
-  height: 140px;
-  border: 1px solid #000;
-  display: flex;
-  flex-flow: row;
-}
-.liuliangbao {
+  margin: 20px auto 0;
+  height: 136px;
+  /* border: 1px solid #000; */
+  overflow-y: hidden;
   overflow-x: auto;
-  margin-right: 6px;
+  white-space: nowrap;
+}
+/* 横向滚动时   取消横向滚动的滚动条 */
+.baokuang::-webkit-scrollbar {
+  display: none;
+}
+
+.liuliangbao {
+  display: inline-block;
+  margin-right: 12px;
   width: 103px;
   height: 136px;
   border: 1px solid #ff9800;
   border-radius: 10px;
-  float: left;
 }
 .tianshu {
   height: 35px;
