@@ -14,7 +14,6 @@
       <van-field class="codes" v-model="user.code" type="digit" label="验证码" :rules="[{ required: true, message: '请填写验证码' }]" placeholder="验证码"  name="验证码"/>
       <div style="margin: 16px;">
         <van-button class="tijiao" block type="info" native-type="submit" @click="tijiao">提交</van-button>
-        <van-button class="tijiao" block type="info" native-type="submit" @click="jiao">跳转</van-button>
       </div>
       <div class="bottom">
         <span>© 2020 HTTPS://MMOO.FUN MMO设计</span>
@@ -56,6 +55,7 @@ export default {
             "token",
             res.data.token
           );
+          this.$router.push('/userlogin')
         }
       }).catch((err)=>{
         console.log(err)
