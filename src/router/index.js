@@ -5,12 +5,17 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 import release from './Release'
+<<<<<<< HEAD
 
 import news from './news'
 
 
 import assistant from './assistant'
 
+=======
+import news from './news'
+import assistant from './assistant'
+>>>>>>> 627b08e1f426d89d1c57afc2c224139d6f73380c
 
 const routes = [
   {
