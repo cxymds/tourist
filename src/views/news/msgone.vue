@@ -28,7 +28,7 @@
                 <div class="two1">
                     <van-search v-model="value" placeholder="请输入搜索关键词" />
                 </div>
-                <div class="two2" v-for="item in person" :key="item.id">
+                <div class="two2" v-for="item in person" :key="item.id" @click="tab">
                     <div class="two2a">
                         <img :src="item.head" alt="">
                     </div>
@@ -53,9 +53,12 @@
         </van-tabs>
        </div>
     </div>
+    <tapbar></tapbar>
+
 </template>
 <script>
 import { ref } from 'vue';
+import menu from '@/components/Nav.vue'
 export default {
   setup() {
     const activeName = ref('a');
@@ -64,6 +67,15 @@ export default {
         activeName,
         value,
     };
+  },
+    name: 'cc',
+    components:{
+    tapbar:menu
+  },
+  methods:{
+    tab(){
+      this.$router.push('/friend');
+    },
   },
   data(){
       return{
@@ -79,6 +91,18 @@ export default {
                   head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
                   name:'小马',
                   msg:'今天天气真不错啊',
+                  date:'12-30',
+                  new:'1'
+              },{
+                  head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
+                  name:'小狗',
+                  msg:'小狗真可爱',
+                  date:'12-30',
+                  new:'1'
+              },{
+                  head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
+                  name:'小狗',
+                  msg:'小狗真可爱',
                   date:'12-30',
                   new:'1'
               },{
@@ -122,6 +146,9 @@ export default {
 };
 </script>
 <style lang="less">
+.all{
+    min-height: 100vh;
+}
 .all .one .two2{
     width: 370px;
     height: 65px;
