@@ -1,29 +1,32 @@
 <template>
   <div class="outer">
-    <div class="nav"><!--顶部导航-->
+    <div class="nav">
+      <!--顶部导航-->
       <van-nav-bar
-  left-text="2020/12/30"
-  right-text="全部"
-  @click-left="onClickLeft"
-  @click-right="onClickRight"
-/>
+        left-text="2020/12/30"
+        right-text="全部"
+        @click-left="onClickLeft"
+        @click-right="onClickRight"
+      />
     </div>
-    <div class="calender"><!--日历-->
+    <div class="calender">
+      <!--日历-->
       <van-calendar
-       v-model="show"
-       color="orange"
-       type="range"
-       :show-title="false"
-  :poppable="false"
-  :show-confirm="false"
-  :style="{ height: '130px' }"
-/>
+        v-model="show"
+        color="orange"
+        type="range"
+        :show-title="false"
+        :poppable="false"
+        :show-confirm="false"
+        :style="{ height: '130px' }"
+      />
     </div>
-    <div class="content"><!--内容块-->
+    <div class="content">
+      <!--内容块-->
       <div class="list_block">
         <!--第一块早餐-->
         <div class="icon" @click="sub">
-            <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="facestar" name="like-o" size="40" />
           <!-- <van-icon class="obversestar" name="like" size="40" color="red" dot badge="9"  /> -->
         </div>
         <img
@@ -35,58 +38,51 @@
         <div class="little_title">美食区</div>
       </div>
     </div>
-    <div class="bottom_nav"><!--底部nav-button-->
-      <van-tabbar v-model="active" active-color="red">
-      <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="search">标签</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-    </van-tabbar>
-    </div>
-    
-
-    
+    <div class="bottom_nav"><!--底部nav-button--></div>
   </div>
+  <tapbar></tapbar>
 </template>
 <style scoped>
-.outer{
+.outer {
   width: 100%;
   height: 100%;
 }
-.nav{
+.nav {
   width: 100%;
   height: 100%;
-  flex: 1;
+   position: relative;
+   z-index: 99;
 }
-.calendar{
+.calender {
   height: 100%;
   width: 100%;
-  display: flex;
+  position: relative;
+  top:-40px;
 }
 /* 内容 */
 .content {
   width: 100%;
-  height: 100%;
-  background-color: gray;
+  height: 587px;
+  /* background-color: gray; */
   position: relative;
-  top: 10px;
+  top: -40px;
 }
 /* 内容快 */
 .content .list_block {
-  position:absolute;
+  position: absolute;
   top: 0px;
   width: 100%;
   height: 130px;
   background-color: white;
 }
-.content .list_block .icon .facestar{
+.content .list_block .icon .facestar {
   width: 20xp;
   height: 20px;
   position: absolute;
   top: 20%;
   left: 85%;
 }
-.content .list_block .icon .obversestar{
+.content .list_block .icon .obversestar {
   width: 20xp;
   height: 20px;
   position: absolute;
@@ -115,19 +111,20 @@
 }
 </style>
 <script>
+import menu from '@/components/Nav.vue'
 export default {
-  data(){
-    return{
-      message:'',
-      show:true
-    }
+   name: 'cc',
+    components:{
+      tapbar:menu
+    },
+  data() {
+    return {
+      message: "",
+      show: true,
+    };
   },
-  methods:{
-    sub(){
-      
-    }
-
-  }
-  
+  methods: {
+    sub() {},
+  },
 };
 </script>

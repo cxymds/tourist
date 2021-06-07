@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="http://xmage.club/FmeQvYX9im5jhoHkc-VLxi0lpY5b" alt="" />
+    <img class="bgimg" src="http://xmage.club/FmeQvYX9im5jhoHkc-VLxi0lpY5b" alt="" />
 
     <div class="delicious">
       <h3>美食街活动</h3>
@@ -22,15 +22,18 @@
     </div>
     <div class="button">
       <!--按钮-->
-      <van-button class="btn" round type="primary" color="orange"><van-icon name="plus" color="red"/>关注活动</van-button>
+      <van-button class="btn" round type="primary" color="orange" ><van-icon name="plus" color="red"/>关注活动</van-button>
     </div>
   </div>
 </template>
 <style scoped>
+.bgimg{
+  width: 100%;
+}
 .delicious{
   background-color: white;
   width: 100%;
-  border-top: 1px solid ;
+  border-top: 1px solid gray;
   border-top-left-radius: 3%;
   border-top-right-radius: 3%;
   height: 700px;
@@ -59,10 +62,8 @@ h4{
   left: 3%;
 }
 .introduce{
-  width: 90%;
-  
+  width: 100%;
   position: absolute;
-  left: 5%;
   top: 180px;
   text-indent: 2em;
   text-align: left;
