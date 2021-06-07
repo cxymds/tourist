@@ -29,14 +29,9 @@
       <div class="list_block">
         <!--第一块早餐-->
         <div class="icon">
-          <img
-            class="facestar"
-            src="http://xmage.club/Fuy3hOLX4W1VvBN_BoBUmdXo0NTJ"
-          />
-          <img
-            class="obversestar"
-            src="http://xmage.club/Ftp0g05jUY0qFGaLOISfaz__kP7C"
-          />
+          <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="obversestar" name="like" size="40" color="red"/>
+          
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -49,14 +44,8 @@
       <div class="list_block">
         <!--第二块早餐-->
         <div class="icon">
-          <img
-            class="facestar"
-            src="http://xmage.club/Fuy3hOLX4W1VvBN_BoBUmdXo0NTJ"
-          />
-          <img
-            class="obversestar"
-            src="http://xmage.club/Ftp0g05jUY0qFGaLOISfaz__kP7C"
-          />
+           <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="obversestar" name="like" size="40" color="red"/>
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -69,14 +58,8 @@
       <div class="list_block">
         <!--第三块早餐-->
         <div class="icon">
-          <img
-            class="facestar"
-            src="http://xmage.club/Fuy3hOLX4W1VvBN_BoBUmdXo0NTJ"
-          />
-          <img
-            class="obversestar"
-            src="http://xmage.club/Ftp0g05jUY0qFGaLOISfaz__kP7C"
-          />
+           <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="obversestar" name="like" size="40" color="red"/>
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -89,14 +72,8 @@
       <div class="list_block">
         <!--第四块早餐-->
         <div class="icon">
-          <img
-            class="facestar"
-            src="http://xmage.club/Fuy3hOLX4W1VvBN_BoBUmdXo0NTJ"
-          />
-          <img
-            class="obversestar"
-            src="http://xmage.club/Ftp0g05jUY0qFGaLOISfaz__kP7C"
-          />
+          <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="obversestar" name="like" size="40" color="red"/>
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -109,14 +86,8 @@
       <div class="list_block">
         <!--第五块早餐-->
         <div class="icon">
-          <img
-            class="facestar"
-            src="http://xmage.club/Fuy3hOLX4W1VvBN_BoBUmdXo0NTJ"
-          />
-          <img
-            class="obversestar"
-            src="http://xmage.club/Ftp0g05jUY0qFGaLOISfaz__kP7C"
-          />
+           <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="obversestar" name="like" size="40" color="red"/>
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -129,14 +100,8 @@
       <div class="list_block">
         <!--第六块早餐-->
         <div class="icon">
-          <img
-            class="facestar"
-            src="http://xmage.club/Fuy3hOLX4W1VvBN_BoBUmdXo0NTJ"
-          />
-          <img
-            class="obversestar"
-            src="http://xmage.club/Ftp0g05jUY0qFGaLOISfaz__kP7C"
-          />
+           <van-icon class="facestar" name="like-o" size="40"/>
+          <van-icon class="obversestar" name="like" size="40" color="red"/>
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -146,14 +111,6 @@
         <div class="words">7：30-至9：00开放</div>
         <div class="little_title">美食区</div>
       </div>
-
-
-
-
-
-
-
-
     </div>
     <van-tabbar v-model="active">
       <van-tabbar-item badge="3">
@@ -201,13 +158,23 @@ div.box-outer .content {
   height: 130px;
   background-color: white;
 }
-.content .list_block .icon > img {
+.content .list_block .icon .facestar{
+  /* 添加关注 */
   width: 20xp;
   height: 20px;
   position: absolute;
   top: 20%;
-  left: 90%;
+  left: 80%;
 }
+.content .list_block .icon .obversestar{
+  /* 取消关注 */
+  width: 20xp;
+  height: 20px;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+}
+
 .content .list_block img {
   position: absolute;
   top: 20px;
