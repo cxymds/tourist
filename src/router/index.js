@@ -5,17 +5,9 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 import release from './Release'
-<<<<<<< HEAD
-
-import news from './news'
-
-
-import assistant from './assistant'
-
-=======
 import news from './news'
 import assistant from './assistant'
->>>>>>> 627b08e1f426d89d1c57afc2c224139d6f73380c
+
 
 const routes = [
   {
@@ -26,17 +18,8 @@ const routes = [
   {
     path: '/userlogin',
     name: 'userlogin',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/userlogin.vue')
+    component: () => import( '../views/userlogin.vue')
   }
-  // ,
-  // {
-  //   path: '/yuan/zy',
-  //   name: 'zy',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/yuan/zy.vue')
-  // }
   ,
   ...zhiyaun
   ,
