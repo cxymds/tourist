@@ -9,7 +9,12 @@
       @click-right="onClickRight"
     />
     <!-- 预约提醒 -->
-    <div class="kuang" v-for="item in list" :key="item.id">
+    <div
+      class="kuang"
+      v-for="item in list"
+      :key="item.id"
+      @click="go(item.router)"
+    >
       <div class="num1">
         <div class="left">
           <div class="xiaotubiao">
@@ -45,37 +50,48 @@ export default {
       onClickRight,
     };
   },
+
   name: "",
   data() {
     return {
       list: [
         {
+          id: 1,
           msg: "预约提醒",
           neirong:
             "您有一条餐饮美食预约即将到来,请您提早前往！时间:2020/12/30 17:30,人数：2人",
           duu: "未读",
           img: "http://xmage.club/FpqtnUEdnyPqyzYwCoyPptFxbT4C",
+          router: "",
         },
         {
+          id: 2,
           msg: "活动通知",
           neirong:
             "“夜光派对”活动将于晚间20：00开放！节假日派对狂欢，激情即将开放；地点：娱乐区A16",
           duu: "未读",
           img: "http://xmage.club/FmA02JKOvYS4GtoDmtMb-s45OGtb",
+          router: "",
         },
         {
+          id: 3,
           msg: "我的消息",
           neirong:
             "您有一笔预支付超额未及时处理，请于今天11：30之前往前台进行相关账单办理！",
           duu: "已读",
           img: "http://xmage.club/FvNqmwW3NlkqNNkhk4-lJ5H_miCF",
+          router: "/xiaoxixiangqing",
         },
       ],
     };
   },
-  methods: {},
+  methods: {
+    go(ip) {
+      this.$router.push({ path: ip });
+    },
+  },
 };
-</script>
+</script> 
 
 <style>
 html {
