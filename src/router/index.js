@@ -5,6 +5,7 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 import release from './Release'
+import assistant from './assistant'
 
 const routes = [
   {
@@ -36,6 +37,8 @@ const routes = [
   ...zhutizhuanwang
   ,
   ...release
+  ,
+  ...assistant
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
