@@ -5,6 +5,8 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 import release from './Release'
+import news from './news'
+
 
 const routes = [
   {
@@ -36,6 +38,8 @@ const routes = [
   ...zhutizhuanwang
   ,
   ...release
+  ,
+  ...news
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
