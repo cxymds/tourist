@@ -80,7 +80,7 @@ export default {
             "您有一笔预支付超额未及时处理，请于今天11：30之前往前台进行相关账单办理！",
           duu: "已读",
           img: "http://xmage.club/FvNqmwW3NlkqNNkhk4-lJ5H_miCF",
-          router: "/xiaoxixiangqing",
+          router: "xiaoxixiangqing",
         },
       ],
     };

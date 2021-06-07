@@ -32,7 +32,7 @@
     </div>
 
     <div class="denglu">
-      <div class="yilianjie">
+      <div class="yilianjie" @click="yilianjie">
         <div class="tu_a">
           <img
             class="im"
@@ -42,7 +42,7 @@
         </div>
         <div class="tuwen_a">已连接记录</div>
       </div>
-      <div class="zhuanwang">
+      <div class="zhuanwang" @click="zhuanwang">
         <div class="tu_b">
           <img
             class="im"
@@ -100,7 +100,9 @@
               >
                 取消
               </button>
-              <button class="block_button_b" type="primary">前往</button>
+              <button class="block_button_b" type="primary" @click="qianwang">
+                前往
+              </button>
             </div>
           </div>
         </div>
@@ -116,7 +118,7 @@
     <div class="zuijingoumai">
       <div class="zuijinggoumai_wenzi">最近购买</div>
 
-      <div class="ztj">
+      <div class="ztj" @click="ztj">
         <div class="zuijinggoumai_jilu">所有记录</div>
         <div class="zhujingoumai_tiaozhuan">
           <img src="http://xmage.club/FnCoMe5uHwYgFG9nbb8dthUfNF2c" alt="" />
@@ -277,8 +279,7 @@
 .baokuang {
   width: 340px;
   margin: 20px auto 0;
-  height: 136px;
-  /* border: 1px solid #000; */
+  height: 140px;
   overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
@@ -449,7 +450,6 @@ export default {
     const onClickLeft = () => Toast("返回");
     const checked = ref(false);
     const show = ref(false);
-
     return {
       onClickLeft,
       checked,
@@ -505,6 +505,19 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    yilianjie() {
+      this.$router.push({ path: "yilianjiejilu" });
+    },
+    zhuanwang() {
+      this.$router.push({ path: "zhuanwangjihuoka" });
+    },
+    ztj() {
+      this.$router.push({ path: "goumaijilu" });
+    },
+    qianwang() {
+      this.$router.push({ path: "yueduxuzhi" });
+    },
+  },
 };
 </script>

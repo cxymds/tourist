@@ -12,7 +12,7 @@
       <div class="biaoti">{{ item.biaoti }}</div>
       <div class="neirong" v-html="item.neirong"></div>
     </div>
-    <van-button class="tongyi" round type="primary" block
+    <van-button class="tongyi" round type="primary" block @click="tongyi"
       >我已阅读并同意</van-button
     >
   </div>
@@ -59,6 +59,7 @@ html {
   background-color: #ff9800;
   width: 90%;
   margin: 0 auto;
+  border: none;
 }
 </style>
 
@@ -103,6 +104,14 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.push({ path: "zhutizhuanwang" });
+    },
+    tongyi() {
+      this.$router.push({ path: "zhutizhuanwang" });
+    },
   },
 };
 </script>
