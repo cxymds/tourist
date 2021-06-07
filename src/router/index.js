@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import zy from './zy'
+import zhiyaun from './zhiyaun'
 import tongzhi from './tongzhi'
 import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 import release from './Release'
+import assistant from './assistant'
 
 const routes = [
   {
@@ -27,8 +28,7 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ '../views/yuan/zy.vue')
   // }
   ,
-  ...zy
-  ,
+  ...zhiyaun,
   ...tongzhi
   ,
   ...recommend
@@ -36,6 +36,8 @@ const routes = [
   ...zhutizhuanwang
   ,
   ...release
+  ,
+  ...assistant
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
