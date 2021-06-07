@@ -1,7 +1,10 @@
 <template>
   <router-view/>
-</template>
 
+</template>
+<script>
+
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
