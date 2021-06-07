@@ -6,7 +6,7 @@
           <sup class="top-right">TM</sup>
       </div>
       <div class="text_right">
-        <a href="" class="text_marvellous">
+        <a href="http://localhost:8080/recommend/release" class="text_marvellous">
             <span class="cir"></span>
             <div>精彩放送</div> 
         </a>
@@ -107,9 +107,11 @@
             </van-swipe>
         </div>
   </div>
+  <tapbar></tapbar>
  
 </template>
 <script>
+ import menu from '@/components/Nav.vue'
 export default {
      setup() {
     const images = [
@@ -119,14 +121,25 @@ export default {
     ];
     return { images };
   },
+ 
+
+  name: 'cc',
+  components:{
+    tapbar:menu
+  }
+
+
 }
 </script>
 <style>
 .top_recom{
-    /* background-color: aqua; */
+    background-color: #fff;
     width: 100%;
     height: auot;
     display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 .top_recom .text_left{
     /* font-size: 20px; */
