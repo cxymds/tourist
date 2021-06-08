@@ -13,5 +13,10 @@ export default[
         path: '/talk',
         name: 'talk',
         component: () => import('@/views/news/msgthree.vue')
+      },
+      {
+        path: '/groupinfo',
+        name: 'groupinfo',
+        component: () => import('@/views/news/msgfour.vue')
       }
 ]

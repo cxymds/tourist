@@ -6,7 +6,7 @@
                 <div class="one1">
                     <van-search v-model="value" placeholder="请输入搜索关键词" />
                 </div>
-                <div class="one2" v-for="item in list" :key="item.id">
+                <div class="one2" v-for="item in list" :key="item.id" @click="msg">
                     <div class="one2a">
                         <img :src="item.head" alt="">
                     </div>
@@ -28,7 +28,7 @@
                 <div class="two1">
                     <van-search v-model="value" placeholder="请输入搜索关键词" />
                 </div>
-                <div class="two2" v-for="item in person" :key="item.id" @click="tab">
+                <div class="two2" v-for="item in person" :key="item.id" @click="friend">
                     <div class="two2a">
                         <img :src="item.head" alt="">
                     </div>
@@ -41,7 +41,7 @@
                 <div class="three1">
                     <van-search v-model="value" placeholder="请输入搜索关键词" />
                 </div>
-                <div class="three2" v-for="item in group" :key="item.id">
+                <div class="three2" v-for="item in group" :key="item.id" @click="qun">
                     <div class="three2a">
                         <img :src="item.head" alt="">
                     </div>
@@ -73,9 +73,18 @@ export default {
     tapbar:menu
   },
   methods:{
-    tab(){
+    friend(){
       this.$router.push('/friend');
     },
+    msg(){
+      this.$router.push('/talk');
+    },
+    qun(){
+      this.$router.push('/talk');
+
+
+    }
+   
   },
   data(){
       return{
