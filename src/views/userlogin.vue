@@ -10,7 +10,7 @@
       </div>
       <div class="appthree">
         <text>点击上传头像</text>
-        <van-uploader  v-model="fileList"  class="file" max-count="1" :before-read="beforeRead"/>
+        <van-uploader  v-model="fileList"  class="file" max-count="1" :after-read="beforeRead" />
         <img :src="state.value4" alt="">
         
       </div>
@@ -92,12 +92,8 @@ export default {
 
   setup() {
     let { proxy } = getCurrentInstance();
-    console.log(1)
-    console.log(img)
     const submit = (e)=>{
       console.log(state)
-      console.log(2)
-      console.log(img)
       const users = window.localStorage.getItem("token")
       proxy.axios({
         method:'post',
@@ -114,8 +110,10 @@ export default {
         console.log(err)
       });
     };
+    let fileList = ref([
+    ]);
 
-    let fileList = ref([]);
+   
     let img = ref('');
     const beforeRead = (file) => {
       console.log(file)

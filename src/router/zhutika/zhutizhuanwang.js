@@ -4,8 +4,8 @@ export default[
       name: 'zhutizhuanwang',
       component:() =>import('@/views/zhutika/zhutizhuanwang/zhutizhuanwang.vue')
     },{
-        path: '/zhuwangjihuoka',
-        name: 'zhuwangjihuoka',
+        path: '/zhuanwangjihuoka',
+        name: 'zhuanwangjihuoka',
         component:() =>import('@/views/zhutika/zhutizhuanwang/zhuanwangjihuoka.vue')
       },
       {
