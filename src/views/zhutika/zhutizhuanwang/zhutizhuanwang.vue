@@ -2,7 +2,7 @@
   <div>
     <div class="luse">
       <div class="navbar">
-        <div class="fanhui">
+        <div class="fanhui" @click="fanhui">
           <img src="http://xmage.club/FnB0bOwoMO3jVjMR496s-K5tsJth" alt="" />
         </div>
         <div class="biaoti">主题专网</div>
@@ -42,6 +42,7 @@
         </div>
         <div class="tuwen_a">已连接记录</div>
       </div>
+
       <div class="zhuanwang" @click="zhuanwang">
         <div class="tu_b">
           <img
@@ -517,6 +518,9 @@ export default {
     },
     qianwang() {
       this.$router.push({ path: "yueduxuzhi" });
+    },
+    fanhui() {
+      this.$router.push({ path: "zhutika" });
     },
   },
 };
