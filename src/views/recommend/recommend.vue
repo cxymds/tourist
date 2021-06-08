@@ -6,7 +6,7 @@
           <sup class="top-right">TM</sup>
       </div>
       <div class="text_right">
-        <a href="http://localhost:8080/recommend/release" class="text_marvellous">
+        <a href="/recommend/release" class="text_marvellous">
             <span class="cir"></span>
             <div>精彩放送</div> 
         </a>

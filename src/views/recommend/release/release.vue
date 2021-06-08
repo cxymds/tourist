@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="head">
-            <span class="return"><a href="http://localhost:8080/recommend"><van-icon name="arrow-left" />返回</a></span>
+            <span class="return"><a href="/recommend"><van-icon name="arrow-left" />返回</a></span>
             <span class="head_text">精彩放送</span>
         </div>
         <van-pull-refresh v-model="state.loading" @refresh="onRefresh">

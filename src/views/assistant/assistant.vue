@@ -15,7 +15,7 @@
             <span class="label_right">已开通1项</span>
         </div>
         <div class="lcon_bar">
-           <a href="" class="lcon_box">
+           <a href="/zhutizhuanwang" class="lcon_box">
                <div class="box_1" style="
                 background-color:#009688 ;
                ">
