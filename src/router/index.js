@@ -5,12 +5,12 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutizhuanwang'
 import release from './Release'
-<<<<<<< HEAD
+
 import news from './news'
 
-=======
+
 import assistant from './assistant'
->>>>>>> 0efaf4629e83365006b044d41af713a7edd65f14
+
 
 const routes = [
   {
@@ -33,7 +33,8 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ '../views/yuan/zy.vue')
   // }
   ,
-  ...zhiyaun,
+  ...zhiyaun
+  ,
   ...tongzhi
   ,
   ...recommend
@@ -42,11 +43,7 @@ const routes = [
   ,
   ...release
   ,
-<<<<<<< HEAD
   ...news
-=======
-  ...assistant
->>>>>>> 0efaf4629e83365006b044d41af713a7edd65f14
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

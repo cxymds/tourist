@@ -1,33 +1,39 @@
 <template>
   <div class="outer">
-    <div class="nav">
-      <!--顶部导航-->
-      <van-nav-bar
-        left-text="2020/12/30"
-        right-text="全部"
-        @click-left="onClickLeft"
-        @click-right="onClickRight"
-      />
+    <div class="inbox">
+      <div class="nav">
+        <!--顶部导航-->
+        <van-nav-bar
+          left-text="2020/12/30"
+          right-text="全部"
+          @click-left="onClickLeft"
+          @click-right="onClickRight"
+        />
+      </div>
+      <div class="calender">
+        <!--日历-->
+        <van-calendar
+          v-model="show"
+          color="orange"
+          type="range"
+          :show-title="false"
+          :poppable="false"
+          :show-confirm="false"
+          :style="{ height: '130px' }"
+        />
+      </div>
     </div>
-    <div class="calender">
-      <!--日历-->
-      <van-calendar
-        v-model="show"
-        color="orange"
-        type="range"
-        :show-title="false"
-        :poppable="false"
-        :show-confirm="false"
-        :style="{ height: '130px' }"
-      />
-    </div>
+
     <div class="content">
-      <!--内容块-->
       <div class="list_block">
+        <router-link
+        target="_self"
+        :to="{ path: '/activity', query: { id: '3' } }"
+      >
         <!--第一块早餐-->
-        <div class="icon" @click="sub">
+        <div class="icon">
           <van-icon class="facestar" name="like-o" size="40" />
-          <!-- <van-icon class="obversestar" name="like" size="40" color="red" dot badge="9"  /> -->
+          <van-icon class="obversestar" name="like" size="40" color="red" />
         </div>
         <img
           src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
@@ -36,36 +42,41 @@
         <div class="title">温情早餐</div>
         <div class="words">7：30-至9：00开放</div>
         <div class="little_title">美食区</div>
+        </router-link>
       </div>
     </div>
-    <div class="bottom_nav"><!--底部nav-button--></div>
+     
   </div>
-  <tapbar></tapbar>
 </template>
 <style scoped>
 .outer {
   width: 100%;
   height: 100%;
 }
+.inbox {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
 .nav {
   width: 100%;
   height: 100%;
-   position: relative;
-   z-index: 99;
+  position: relative;
+  z-index: 2;
 }
 .calender {
   height: 100%;
   width: 100%;
   position: relative;
-  top:-40px;
+  top: -40px;
 }
 /* 内容 */
 .content {
   width: 100%;
-  height: 587px;
-  /* background-color: gray; */
+  height: 787px;
   position: relative;
-  top: -40px;
+  top: 140px;
+  /* z-index: 2; */
 }
 /* 内容快 */
 .content .list_block {
@@ -111,12 +122,12 @@
 }
 </style>
 <script>
-import menu from '@/components/Nav.vue'
+import menu from "@/components/Nav.vue";
 export default {
-   name: 'cc',
-    components:{
-      tapbar:menu
-    },
+  name: "cc",
+  components: {
+    tapbar: menu,
+  },
   data() {
     return {
       message: "",
