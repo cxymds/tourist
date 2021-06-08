@@ -41,7 +41,11 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+  },
 };
 </script>
 

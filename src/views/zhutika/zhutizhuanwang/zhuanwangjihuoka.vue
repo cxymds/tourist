@@ -124,5 +124,10 @@ export default {
       list: [],
     };
   },
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+  },
 };
 </script>
