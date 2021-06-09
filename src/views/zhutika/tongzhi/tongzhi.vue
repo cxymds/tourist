@@ -71,7 +71,7 @@ export default {
             "“夜光派对”活动将于晚间20：00开放！节假日派对狂欢，激情即将开放；地点：娱乐区A16",
           duu: "未读",
           img: "http://xmage.club/FmA02JKOvYS4GtoDmtMb-s45OGtb",
-          router: "",
+          router: "activity-attention",
         },
         {
           id: 3,

@@ -6,7 +6,7 @@
           <sup class="top-right">TM</sup>
       </div>
       <div class="text_right">
-        <a href="http://localhost:8080/recommend/release" class="text_marvellous">
+        <a href="/recommend/release" class="text_marvellous">
             <span class="cir"></span>
             <div>精彩放送</div> 
         </a>
@@ -113,7 +113,7 @@
 <script>
  import menu from '@/components/Nav.vue'
 export default {
-     setup() {
+    setup() {
     const images = [
       'http://xmage.club/FoQaFZ3jRHNdkJlqSmfBPV4QZq98',
       'http://xmage.club/FtH_OhKVvbsLwnr-CRaDdMyysxlp',
@@ -121,8 +121,6 @@ export default {
     ];
     return { images };
   },
- 
-
   name: 'cc',
   components:{
     tapbar:menu

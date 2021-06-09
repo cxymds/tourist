@@ -3,6 +3,39 @@
        <div class="one">
             <van-tabs v-model:active="activeName">
             <van-tab title="消息" name="a">
+                <van-cell is-link @click="showPopup"><img src="http://xmage.club/FqN8cZq4hgu2KEUwUArXoifkY-7k" alt="" class="jiahao"></van-cell>
+                <van-popup
+                v-model:show="show"
+                round
+                position="bottom"
+                :style="{ height: '25%' }"
+                class="tan"
+                >
+                 <div class="tanone">
+                     <div class="tanoneleft">
+                         <img src="http://xmage.club/Fns4iBDsBWBnF7lDZ4FwHjYQMUvT" alt="">
+                     </div>
+                     <div class="tanoneight">
+                         扫一扫
+                     </div>
+                 </div>
+                 <div class="tantwo" @click="twocode">
+                     <div class="tantwoleft">
+                         <img src="http://xmage.club/FuCjml1nC8rZdm17yzuxvf_AFK9-" alt="">
+                     </div>
+                     <div class="tantwoight">
+                         二维码
+                     </div>
+                 </div>
+                 <div class="tanthree">
+                     <div class="tanthreeleft">
+                         <img src="http://xmage.club/Fu5LcslWz0tQOfBqlU1361910d6t" alt="">
+                     </div>
+                     <div class="tanthreeight">
+                         创建群组
+                     </div>
+                 </div>
+                </van-popup>
                 <div class="one1">
                     <van-search v-model="value" placeholder="请输入搜索关键词" />
                 </div>
@@ -24,6 +57,7 @@
                     </div>
                 </div>
             </van-tab>
+            
             <van-tab title="好友" name="b">
                 <div class="two1">
                     <van-search v-model="value" placeholder="请输入搜索关键词" />
@@ -54,7 +88,6 @@
        </div>
     </div>
     <tapbar></tapbar>
-
 </template>
 <script>
 import { ref } from 'vue';
@@ -63,9 +96,15 @@ export default {
   setup() {
     const activeName = ref('a');
     const value = ref('');
+    const show = ref(false);
+    const showPopup = () => {
+      show.value = true;
+    };
     return { 
         activeName,
         value,
+        showPopup,
+        show
     };
   },
     name: 'cc',
@@ -81,10 +120,10 @@ export default {
     },
     qun(){
       this.$router.push('/talk');
-
-
+    },
+    twocode(){
+      this.$router.push('/twocode');
     }
-   
   },
   data(){
       return{
@@ -155,6 +194,42 @@ export default {
 };
 </script>
 <style lang="less">
+.tan{
+    display: flex;
+    flex-direction: column;
+    div{
+        width: 100%;
+        height: 70px;
+        margin: 2px 0;
+        display: flex;
+        flex-direction: row;
+            border-bottom: 1px solid rgb(224, 224, 224);
+
+        div{
+            width: 50%;
+            height: 100%;
+            margin: 0 2px;
+            line-height: 62px;
+            font-weight: bold;
+             img{
+                width:30px;
+                padding-left: 145px;
+                padding-top: 15px;
+                height: 30px;
+            }
+        }
+    }
+    
+}
+.van-cell{
+    padding:5px;
+}
+.jiahao{
+    width: 25px;
+    height: 25px;
+    padding-left:170px;
+    padding-top: 2px;
+}
 .all{
     min-height: 100vh;
 }

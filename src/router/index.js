@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import zhiyaun from './zhiyaun'
-import tongzhi from './tongzhi'
+import tongzhi from './zhutika/tongzhi'
 import login from '../views/login.vue'
 import recommend from './recommend'
-import zhutizhuanwang from './zhutizhuanwang'
+import zhutizhuanwang from './zhutika/zhutizhuanwang'
 import release from './Release'
 
 
@@ -11,6 +11,7 @@ import news from './news'
 
 
 import assistant from './assistant'
+import zhutika from './zhutika/zhutika'
 
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
     path: '/userlogin',
     name: 'userlogin',
     component: () => import( '../views/userlogin.vue')
+  },
+  {
+    path: '/qrcode',
+    name: 'qrcode',
+    component: () => import( '../components/Qrcode.vue')
   }
   ,
   ...zhiyaun
@@ -38,6 +44,8 @@ const routes = [
   ...news
   ,
   ...assistant
+  ,
+  ...zhutika
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

@@ -2,7 +2,7 @@
   <div>
     <div class="luse">
       <div class="navbar">
-        <div class="fanhui">
+        <div class="fanhui" @click="fanhui">
           <img src="http://xmage.club/FnB0bOwoMO3jVjMR496s-K5tsJth" alt="" />
         </div>
         <div class="biaoti">主题专网</div>
@@ -42,6 +42,7 @@
         </div>
         <div class="tuwen_a">已连接记录</div>
       </div>
+
       <div class="zhuanwang" @click="zhuanwang">
         <div class="tu_b">
           <img
@@ -57,7 +58,23 @@
     <!-- 横向滚动 功能缺陷 -->
     <div>
       <van-tabs v-model="active" animated>
-        <van-tab v-for="item in bao" :title="item.id" :key="item.id">
+        <van-tab title="时长包" :key="id">
+          <div class="baokuang">
+            <div class="liuliangbao" v-for="liu in list" :key="liu.id">
+              <div class="tianshu">{{ liu.liang }}</div>
+              <div class="xianjia">
+                <div class="xianjia_shu">
+                  {{ liu.xianjia }}
+                  <div class="xianjia_fuhao">￥</div>
+                </div>
+              </div>
+              <div class="yuanjia">￥{{ liu.yuanjia }}</div>
+              <div class="leixing">{{ liu.liexing }}</div>
+            </div>
+          </div>
+        </van-tab>
+
+        <van-tab title="流量包" :key="id">
           <div class="baokuang">
             <div class="liuliangbao" v-for="liu in list" :key="liu.id">
               <div class="tianshu">{{ liu.tian }}</div>
@@ -459,28 +476,31 @@ export default {
   name: "",
   data() {
     return {
-      bao: [{ id: "流量包" }, { id: "时长包" }],
       list: [
         {
-          tian: "200MB",
+          liang: "200MB",
+          tian: "1天",
           xianjia: "88",
           yuanjia: "120",
           liexing: "大咖专享",
         },
         {
-          tian: "500MB",
+          liang: "500MB",
+          tian: "3天",
           xianjia: "188",
           yuanjia: "238",
           liexing: "热门选择",
         },
         {
-          tian: "1000MB",
+          liang: "1000MB",
+          tian: "7天",
           xianjia: "288",
           yuanjia: "328",
           liexing: "大咖专享",
         },
         {
-          tian: "3000MB",
+          liang: "3000MB",
+          tian: "10天",
           xianjia: "328",
           yuanjia: "398",
           liexing: "至臻特惠",
@@ -517,6 +537,9 @@ export default {
     },
     qianwang() {
       this.$router.push({ path: "yueduxuzhi" });
+    },
+    fanhui() {
+      this.$router.go(-1);
     },
   },
 };
