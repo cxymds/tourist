@@ -106,7 +106,6 @@ export default {
     margin-top: 5px;
     border-radius: 15px;
     text-indent: 1rem;
-    
 }
 .onee{
     width: 100%;

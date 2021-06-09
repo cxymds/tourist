@@ -18,5 +18,9 @@ export default[
         path: '/groupinfo',
         name: 'groupinfo',
         component: () => import('@/views/news/msgfour.vue')
+      },{
+        path: '/twocode',
+        name: 'twocode',
+        component: () => import('@/views/news/msgfif.vue')
       }
 ]

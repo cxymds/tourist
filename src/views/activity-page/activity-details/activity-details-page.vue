@@ -27,25 +27,24 @@
     <div class="content">
       <div class="list_block">
         <router-link
-        target="_self"
-        :to="{ path: '/activity', query: { id: '3' } }"
-      >
-        <!--第一块早餐-->
-        <div class="icon">
-          <van-icon class="facestar" name="like-o" size="40" />
-          <van-icon class="obversestar" name="like" size="40" color="red" />
-        </div>
-        <img
-          src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
-          alt="温情早餐"
-        />
-        <div class="title">温情早餐</div>
-        <div class="words">7：30-至9：00开放</div>
-        <div class="little_title">美食区</div>
+          target="_self"
+          :to="{ path: '/activity', query: { id: '3' } }"
+        >
+          <!--第一块早餐-->
+          <div class="icon">
+            <van-icon class="facestar" name="like-o" size="40" />
+            <van-icon class="obversestar" name="like" size="40" color="red" />
+          </div>
+          <img
+            src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
+            alt="温情早餐"
+          />
+          <div class="title">温情早餐</div>
+          <div class="words">7：30-至9：00开放</div>
+          <div class="little_title">美食区</div>
         </router-link>
       </div>
     </div>
-     
   </div>
 </template>
 <style scoped>
@@ -135,7 +134,9 @@ export default {
     };
   },
   methods: {
-    sub() {},
+    onClickRight: function () {
+      this.$router.replace("/activity");
+    },
   },
 };
 </script>

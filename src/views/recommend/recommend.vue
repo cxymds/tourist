@@ -113,7 +113,7 @@
 <script>
  import menu from '@/components/Nav.vue'
 export default {
-     setup() {
+    setup() {
     const images = [
       'http://xmage.club/FoQaFZ3jRHNdkJlqSmfBPV4QZq98',
       'http://xmage.club/FtH_OhKVvbsLwnr-CRaDdMyysxlp',
@@ -121,8 +121,6 @@ export default {
     ];
     return { images };
   },
- 
-
   name: 'cc',
   components:{
     tapbar:menu
