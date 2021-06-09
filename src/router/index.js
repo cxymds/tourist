@@ -5,7 +5,7 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutika/zhutizhuanwang'
 import release from './Release'
-
+import Personal from './Personal'
 
 import news from './news'
 
@@ -41,6 +41,8 @@ const routes = [
   ...assistant
   ,
   ...zhutika
+  ,
+  ...Personal
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
