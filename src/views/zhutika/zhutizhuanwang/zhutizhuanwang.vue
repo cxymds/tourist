@@ -520,7 +520,7 @@ export default {
       this.$router.push({ path: "yueduxuzhi" });
     },
     fanhui() {
-      this.$router.push({ path: "zhutika" });
+      this.$router.go(-1);
     },
   },
 };
