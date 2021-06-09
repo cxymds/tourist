@@ -42,6 +42,31 @@
     </div>
 
     <!-- 请仔细阅读以下 -->
+    <div class="zixiyuedu">请仔细阅读以下</div>
+    <!-- 服务须知 -->
+    <div class="xuzhi">
+      <div class="xuzhi_wenzi">服务须知</div>
+      <div class="xuzhi_xiangxi">
+        本服务采用卫星通讯提供安全、稳定、可靠的信号传输。使用时请在法律允许范围内使用;<br />
+        一、服务采用开通后手机号永久制度，下次入园无需再次开通通讯服务即可正常使用;<br />
+        二、 拨号及接听费用按照资费表进行收费;
+      </div>
+    </div>
+    <!-- 注意事项 -->
+    <div class="zhuyi">
+      <div class="zhuyi_wenzi">注意事项</div>
+      <div class="zhuyi_xiangxi">
+        一、服务开通后可能会出现1~10秒的激活延迟，请耐心等待;<br />
+        二、服务所接入卫星为XX,请遵守国家相关法律法规;<br />
+        三、使用过程中出现问题，请及时联系客服: XXXX
+      </div>
+    </div>
+    <!-- 开通 -->
+    <div class="kaitong">
+      <van-button type="primary" class="kaitong_btn" block round
+        >开通 ￥88</van-button
+      >
+    </div>
   </div>
 </template>
 <style>
@@ -56,14 +81,12 @@ html {
   width: 345px;
   height: 132px;
   margin: 20px auto 0;
-  border: 1px solid #000;
 }
 /* 开通号码 */
 .kaitonghaoma {
   width: 345px;
   height: 180px;
   margin: 20px auto 0;
-  border: 1px solid #000;
   background-color: #fff;
   border-radius: 10px;
 }
@@ -92,7 +115,6 @@ input[type="text"] {
 .zifei {
   width: 345px;
   height: 225px;
-  border: 1px solid #000;
   border-radius: 10px;
   margin: 20px auto;
   background-color: #fff;
@@ -180,12 +202,83 @@ input[type="text"] {
 }
 
 /* 请仔细阅读以下 */
+.zixiyuedu {
+  width: 345px;
+  height: 20px;
+  font-size: 12px;
+  color: #999;
+  text-align: left;
+  margin: 20px auto 0;
+}
+
+/* 服务须知 */
+.xuzhi {
+  width: 375px;
+  height: 160px;
+  background-color: #fff;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.xuzhi_wenzi {
+  width: 345px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  margin: 10px auto 0;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+.xuzhi_xiangxi {
+  width: 345px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  margin: 10px auto 0;
+  color: #999;
+}
+/* 注意事项 */
+.zhuyi {
+  width: 375px;
+  height: 140px;
+  background-color: #fff;
+  margin: 10px 0 70px 0;
+  overflow: hidden;
+}
+.zhuyi_wenzi {
+  width: 345px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  margin: 10px auto 0;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+.zhuyi_xiangxi {
+  width: 345px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  margin: 10px auto 0;
+  color: #999;
+}
+/* 开通 */
+.kaitong {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+}
+.kaitong_btn {
+  width: 70%;
+  height: 40px;
+  margin: 10px auto 0;
+  background-color: #ff9800;
+  border: none;
+}
 </style>
-
-
-
-
-
 
 
 <script>
@@ -219,7 +312,7 @@ export default {
   },
   methods: {
     onClickLeft() {
-      this.$router.push({ path: "assistant" });
+      this.$router.go(-1);
     },
   },
 };
