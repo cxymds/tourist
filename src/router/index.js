@@ -11,7 +11,9 @@ import news from './news'
 
 
 import assistant from './assistant'
-import zhutika from './zhutika/zhutika'
+import tongxun from './zhutika/tongxun'
+import kayingyuan from './zhutika/kayingyuan'
+
 
 
 const routes = [
@@ -45,7 +47,9 @@ const routes = [
   ,
   ...assistant
   ,
-  ...zhutika
+  ...tongxun
+  ,
+  ...kayingyuan
   ,
   ...Personal
 ]

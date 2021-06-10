@@ -106,12 +106,13 @@ export default {
     color: rgb(151, 151, 151);
 }
 .msgtwo .three{
-    box-shadow: 5px 5px 5px rgb(219, 219, 219);
+    border-top: 1px solid rgb(238, 238, 238);
+    border-bottom: 1px solid rgb(238, 238, 238);
     width: 370px;
     margin: 0 auto;
 }
 .msgtwo .four{
-    box-shadow: 5px 5px 5px rgb(209, 209, 209);
+    border-bottom: 1px solid rgb(238, 238, 238);
     width: 370px;
     margin: 0 auto;
 }

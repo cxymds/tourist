@@ -8,7 +8,7 @@
                 <div class="allonebottom">请向商家展示该码，以便支付</div>
             </div>
             <div class="alltwo">
-                <img src="http://xmage.club/FgkRIw-Ikhabwxf4vJ_Pr4v7Zffu" alt="">
+                <img src="http://xmage.club/FlbSZrU_QIUje17WDVyQsL5n_Q_A" alt="">
             </div>
             <div class="allthree">
                 刷新
