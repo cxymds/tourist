@@ -101,7 +101,7 @@
         @click="show = true"
         >我已经阅读需知</van-checkbox
       >
-      <van-overlay :show="show">
+      <van-overlay :show="show" @click="show = true">
         <div class="wrapper" @click.stop>
           <div class="block">
             <div class="block_yuedu">阅读上网须知</div>
@@ -151,6 +151,94 @@
     </div>
   </div>
 </template>
+
+<script>
+import { Toast } from "vant";
+import { ref } from "vue";
+export default {
+  setup() {
+    const onClickLeft = () => Toast("返回");
+    const checked = ref(false);
+    const show = ref(false);
+
+    return {
+      onClickLeft,
+      checked,
+      show,
+    };
+  },
+  name: "",
+  data() {
+    return {
+      list: [
+        {
+          liang: "200MB",
+          tian: "1天",
+          xianjia: "88",
+          yuanjia: "120",
+          liexing: "大咖专享",
+        },
+        {
+          liang: "500MB",
+          tian: "3天",
+          xianjia: "188",
+          yuanjia: "238",
+          liexing: "热门选择",
+        },
+        {
+          liang: "1000MB",
+          tian: "7天",
+          xianjia: "288",
+          yuanjia: "328",
+          liexing: "大咖专享",
+        },
+        {
+          liang: "3000MB",
+          tian: "10天",
+          xianjia: "328",
+          yuanjia: "398",
+          liexing: "至臻特惠",
+        },
+      ],
+      jilu: [
+        {
+          ming: "流量包 3000MB",
+          jin: "88.00",
+          shijian: "2020/12/30",
+        },
+        {
+          ming: "流量包 3000MB",
+          jin: "88.00",
+          shijian: "2020/12/30",
+        },
+        {
+          ming: "流量包 3000MB",
+          jin: "88.00",
+          shijian: "2020/12/30",
+        },
+      ],
+    };
+  },
+  methods: {
+    yilianjie() {
+      this.$router.push({ path: "yilianjiejilu" });
+    },
+    zhuanwang() {
+      this.$router.push({ path: "zhuanwangjihuoka" });
+    },
+    ztj() {
+      this.$router.push({ path: "goumaijilu" });
+    },
+    qianwang() {
+      this.$router.push({ path: "yueduxuzhi" });
+    },
+    fanhui() {
+      this.$router.go(-1);
+    },
+  },
+};
+</script>
+
 
 <style scoped>
 /* 主题专网 */
@@ -292,7 +380,6 @@
   border-right: 1px solid #eee;
 }
 
-/* 横向滚动 功能缺陷 */
 .baokuang {
   width: 340px;
   margin: 20px auto 0;
@@ -355,7 +442,6 @@
 /* 我已经阅读须知功能缺陷 */
 .xuzhi {
   width: 140px;
-  border: 1px solid #000;
   margin: 20px auto 0;
 }
 .block_yuedu {
@@ -455,92 +541,3 @@
   float: right;
 }
 </style>
-
-
-
-
-<script>
-import { Toast } from "vant";
-import { ref } from "vue";
-export default {
-  setup() {
-    const onClickLeft = () => Toast("返回");
-    const checked = ref(false);
-    const show = ref(false);
-    return {
-      onClickLeft,
-      checked,
-      show,
-    };
-  },
-  name: "",
-  data() {
-    return {
-      list: [
-        {
-          liang: "200MB",
-          tian: "1天",
-          xianjia: "88",
-          yuanjia: "120",
-          liexing: "大咖专享",
-        },
-        {
-          liang: "500MB",
-          tian: "3天",
-          xianjia: "188",
-          yuanjia: "238",
-          liexing: "热门选择",
-        },
-        {
-          liang: "1000MB",
-          tian: "7天",
-          xianjia: "288",
-          yuanjia: "328",
-          liexing: "大咖专享",
-        },
-        {
-          liang: "3000MB",
-          tian: "10天",
-          xianjia: "328",
-          yuanjia: "398",
-          liexing: "至臻特惠",
-        },
-      ],
-      jilu: [
-        {
-          ming: "流量包 3000MB",
-          jin: "88.00",
-          shijian: "2020/12/30",
-        },
-        {
-          ming: "流量包 3000MB",
-          jin: "88.00",
-          shijian: "2020/12/30",
-        },
-        {
-          ming: "流量包 3000MB",
-          jin: "88.00",
-          shijian: "2020/12/30",
-        },
-      ],
-    };
-  },
-  methods: {
-    yilianjie() {
-      this.$router.push({ path: "yilianjiejilu" });
-    },
-    zhuanwang() {
-      this.$router.push({ path: "zhuanwangjihuoka" });
-    },
-    ztj() {
-      this.$router.push({ path: "goumaijilu" });
-    },
-    qianwang() {
-      this.$router.push({ path: "yueduxuzhi" });
-    },
-    fanhui() {
-      this.$router.go(-1);
-    },
-  },
-};
-</script>
