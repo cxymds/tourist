@@ -39,7 +39,7 @@
     </div>
     <div class="button">
       <!--按钮-->
-      <router-link target="_blank" :to="{ path: '/activity', query: { id: '2' } }">
+      <router-link target="_self" :to="{ path: '/activity', query: { id: '2' } }">
         <van-button class="btn" round type="primary" color="orange"
           ><van-icon name="plus" color="red" />关注活动</van-button
         >

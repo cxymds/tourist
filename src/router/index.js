@@ -5,7 +5,7 @@ import login from '../views/login.vue'
 import recommend from './recommend'
 import zhutizhuanwang from './zhutika/zhutizhuanwang'
 import release from './Release'
-
+import Personal from './Personal'
 
 import news from './news'
 
@@ -26,6 +26,11 @@ const routes = [
     path: '/userlogin',
     name: 'userlogin',
     component: () => import( '../views/userlogin.vue')
+  },
+  {
+    path: '/qrcode',
+    name: 'qrcode',
+    component: () => import( '../components/Qrcode.vue')
   }
   ,
   ...zhiyaun
@@ -45,6 +50,8 @@ const routes = [
   ...tongxun
   ,
   ...kayingyuan
+  ,
+  ...Personal
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

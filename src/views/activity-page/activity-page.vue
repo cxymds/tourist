@@ -28,8 +28,8 @@
     </div>
     <div class="content">
       <router-link
-        target="_blank"
-        :to="{ path: '/activity-details', query: { id: '1' } }"
+        target="_self"
+        :to="{ path: '/activity-attention', query: { id: '1' } }"
       >
         <div class="list_block">
           <!--第一块早餐-->
@@ -49,7 +49,7 @@
       <div class="list_block">
         <router-link
         target="_self"
-        :to="{ path: '/activity-details', query: { id: '1' } }"
+        :to="{ path: '/activity-attention', query: { id: '1' } }"
       >
         <!--第二块早餐-->
         <div class="icon">
@@ -132,7 +132,12 @@
     display: none;
   }
 } */
-
+router-link-active{
+color: green;   
+}
+a{
+  color:black;
+}
 div.box-outer {
   width: 100%;
   height: 100%;
@@ -217,11 +222,15 @@ export default {
   methods: {
     methods: {
       onClickLeft() {
-        Toast("返回");
+       
+       console.log(111111)
       },
       onClickRight() {
         Toast("按钮");
       },
+    },
+    onClickRight:function(){
+      this.$router.replace('/activity-details')
     },
     formatter(day) {
       const month = day.date.getMonth() + 1;
