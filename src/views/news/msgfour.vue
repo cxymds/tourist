@@ -78,7 +78,6 @@ export default {
                 }
             ]
         }
-        
     },
     methods:{
         tab(){
@@ -154,8 +153,8 @@ export default {
 .msgfour .fourtwo{
     display: flex;
     flex-direction: row;
-    border: 1px solid rgb(228, 228, 228);
-    box-shadow: 2px 2px 15px rgb(214, 214, 214);
+    border-top: 1px solid rgb(238, 238, 238);
+    box-shadow: 10px 10px 15px rgb(238, 238, 238);
     box-sizing: border-box;
 }
 .msgfour .fourtwo div{
@@ -176,8 +175,7 @@ export default {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    border: 1px solid rgb(228, 228, 228);
-    box-shadow: 2px 2px 15px rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(238, 238, 238);
 }
 .msgfour .fourthree div{
     margin: 0 10px;
@@ -196,8 +194,7 @@ export default {
 .msgfour .fourfour{
     display: flex;
     flex-direction: row;
-    border: 1px solid rgb(228, 228, 228);
-    box-shadow: 2px 2px 15px rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(238, 238, 238);
     box-sizing: border-box;
 }
 .msgfour .fourfour div{
@@ -221,8 +218,7 @@ export default {
 .msgfour .fourfif{
     display: flex;
     flex-direction: row;
-    border: 1px solid rgb(228, 228, 228);
-    box-shadow: 2px 2px 15px rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(238, 238, 238);
     box-sizing: border-box;
 }
 .msgfour .fourfif div{
@@ -246,8 +242,7 @@ export default {
 .msgfour .foursix{
     color: red;
     line-height: 55px;
-    border: 1px solid rgb(228, 228, 228);
-    box-shadow: 2px 2px 15px rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(238, 238, 238);
     box-sizing: border-box;
     font-weight: bold;
 }
