@@ -204,7 +204,6 @@ export default {
         display: flex;
         flex-direction: row;
             border-bottom: 1px solid rgb(224, 224, 224);
-
         div{
             width: 50%;
             height: 100%;
@@ -236,7 +235,7 @@ export default {
 .all .one .two2{
     width: 370px;
     height: 65px;
-    box-shadow: 5px 5px 5px rgb(211, 211, 211);
+    border-bottom: 1px solid rgb(238, 238, 238);
     display: flex;
     margin: 0 auto;
     margin-top: 15px;
@@ -258,7 +257,7 @@ export default {
 .all .one .three2{
     width: 370px;
     height: 65px;
-    box-shadow: 5px 5px 5px rgb(211, 211, 211);
+    border-bottom: 1px solid rgb(238, 238, 238);
     display: flex;
     margin: 0 auto;
     margin-top: 15px;
@@ -290,7 +289,7 @@ export default {
     height: 70px;
     border-radius: 12px;
     margin: 0 auto;
-    box-shadow: 5px 5px 5px rgb(211, 211, 211);
+    border-bottom: 1px solid rgb(238, 238, 238);
     display: flex;
     flex-direction: row;
     margin-top: 15px;
