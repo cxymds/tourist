@@ -121,10 +121,17 @@
             </div>
         </div>
     </div>
+      <tapbar></tapbar>
+
 </template>
 <script>
+ import menu from '@/components/Nav.vue'
 export default {
-    
+    name: 'cc',
+  components:{
+    tapbar:menu
+  }
+
 }
 </script>
 <style>
