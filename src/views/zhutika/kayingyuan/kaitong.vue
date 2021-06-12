@@ -50,7 +50,7 @@
   </div>
   <!-- 注意事项 -->
   <div class="zhuyi">
-    <div class="zhuyi_wenzi">注意事项</div>
+    <div class="zhuyi_wenzi" @click="chenggong = true">注意事项</div>
     <div class="zhuyi_xiangxi">
       一、本服务自开通完毕后即可使用，开通完毕可能会有1~10
       秒左右的激活延迟，请耐心等待;<br />
@@ -59,12 +59,104 @@
     </div>
     <!-- 开通 -->
     <div class="kaitong">
-      <van-button type="primary" class="kaitong_btn" block round
+      <van-button
+        type="primary"
+        class="kaitong_btn"
+        block
+        round
+        @click="show = true"
         >开通 ￥328 套餐</van-button
       >
     </div>
+
+    <van-action-sheet
+      v-model:show="show"
+      :actions="actions"
+      @select="onSelect"
+      title="支付方式"
+      cancel-text="取消"
+      close-on-click-action
+      @cancel="onCancel"
+    />
+    <van-overlay :show="chenggong" @click="chenggong = false">
+      <div class="wrapper" @click.stop>
+        <div class="block" />
+      </div>
+    </van-overlay>
   </div>
 </template>
+
+
+
+<script>
+import { ref } from "vue";
+import { Toast } from "vant";
+export default {
+  setup() {
+    const onClickLeft = () => Toast("返回");
+    const show = ref(false);
+    const chenggong = ref(false);
+    const actions = [
+      { name: "主题币 (剩余:￥16800)" },
+      { name: "咖先用 (剩余:￥10000)" },
+      { name: "咖积分兑换 (不足)", disabled: true },
+    ];
+    const onSelect = (item) => {
+      // 默认情况下点击选项时不会自动收起
+      // 可以通过 close-on-click-action 属性开启自动收起
+      show.value = false;
+      Toast(item.name);
+    };
+    const onCancel = () => Toast("取消");
+    return {
+      onClickLeft,
+      show,
+      actions,
+      onSelect,
+      onCancel,
+      chenggong,
+    };
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    },
+    cheng() {
+      this.$$route.push({ path: "kayingyuan" });
+    },
+  },
+  data() {
+    return {
+      list: [
+        {
+          liang: "大咖专享",
+          xianjia: "328",
+          yuanjia: "398",
+          liexing: "至臻特惠",
+        },
+        {
+          liang: "1天套餐",
+          xianjia: "88",
+          yuanjia: "120",
+          liexing: "大咖专享",
+        },
+        {
+          liang: "3天套餐",
+          xianjia: "188",
+          yuanjia: "328",
+          liexing: "热门选择",
+        },
+        {
+          liang: "5天套餐",
+          xianjia: "288",
+          yuanjia: "328",
+          liexing: "大咖专享",
+        },
+      ],
+    };
+  },
+};
+</script>
 
 
 
@@ -75,6 +167,19 @@ html {
 }
 </style>
 <style scoped>
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+}
+
 /* 广告 */
 .guanggao {
   margin: 10px 0 0 0;
@@ -257,53 +362,3 @@ html {
 }
 </style>
 
-
-
-
-<script>
-export default {
-  setup() {
-    const onClickLeft = () => Toast("返回");
-    const onClickRight = () => Toast("按钮");
-    return {
-      onClickLeft,
-      onClickRight,
-    };
-  },
-  methods: {
-    onClickLeft() {
-      this.$router.go(-1);
-    },
-  },
-  data() {
-    return {
-      list: [
-        {
-          liang: "大咖专享",
-          xianjia: "328",
-          yuanjia: "398",
-          liexing: "至臻特惠",
-        },
-        {
-          liang: "1天套餐",
-          xianjia: "88",
-          yuanjia: "120",
-          liexing: "大咖专享",
-        },
-        {
-          liang: "3天套餐",
-          xianjia: "188",
-          yuanjia: "328",
-          liexing: "热门选择",
-        },
-        {
-          liang: "5天套餐",
-          xianjia: "288",
-          yuanjia: "328",
-          liexing: "大咖专享",
-        },
-      ],
-    };
-  },
-};
-</script>

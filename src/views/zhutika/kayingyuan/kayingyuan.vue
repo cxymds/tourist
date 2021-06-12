@@ -58,7 +58,7 @@
     </van-swipe>
 
     <!-- 绿色条 -->
-    <div class="lutiao">
+    <div class="lutiao" @click="kaitong">
       <img src="http://xmage.club/FoMEtRLDFR-1HpXeaZoH1QTIFDNY" alt="" />
     </div>
 
@@ -323,6 +323,9 @@ export default {
   methods: {
     fanhui() {
       this.$router.go(-1);
+    },
+    kaitong() {
+      this.$router.push({ path: "kaitong" });
     },
   },
 };
