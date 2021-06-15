@@ -33,7 +33,6 @@
       </div>
       <div class="lishi_jilu">
         <div class="lishi_jilu_ming">电影</div>
-
         <van-sticky>
           <van-button type="primary">12312</van-button>
         </van-sticky>
