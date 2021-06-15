@@ -9,4 +9,9 @@ export default[
       name: 'kaitong',
       component:() =>import('@/views/zhutika/kayingyuan/kaitong.vue')
     },
+    {
+      path: '/kanguo',
+      name: 'kanguo',
+      component:() =>import('@/views/zhutika/kayingyuan/kanguo.vue')
+    },
   ]
