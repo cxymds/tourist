@@ -100,7 +100,7 @@
                  <div class="rai_box">其他</div>
                 <a href="" class="mana_box">
                     <span class="top_box">
-                        <van-image src="http://xmage.club/FqHPWOPxCBKBOp_RKsmUTZX8TjZu" />
+                        <van-image src="http://xmage.club/FgamQ26zVjin_pEqDizEOkT9pnhX" />
                         <span>设置中心</span>
                     </span>
                     <span class="buttom_box">
@@ -110,7 +110,7 @@
                 </a>
                 <a href="" class="Grade_box">
                     <span class="top_box">
-                        <van-image src="http://xmage.club/Fsglh1nI20a61GlU-BV7i2PEsczk" />
+                        <van-image src="http://xmage.club/FhjLcCjv0TZGRakQTZWgTV9xFhCf" />
                         <span>主题问卷</span>
                     </span>
                     <span class="buttom_box">
