@@ -13,7 +13,7 @@
           </van-tab>
         </van-tabs>
       </div>
-      <div class="nav_guan">
+      <div class="nav_guan" @click="fanhui">
         <img src="http://xmage.club/Fr5I-055a-5YrVErGNRxqyEOP1w-" alt="" />
       </div>
     </div>
@@ -52,39 +52,56 @@
       <van-swipe-item
         ><img
           class="lun_img"
-          src="http://xmage.club/Fofc_P4V9fodzd5lnDm-tj5XxrAQ"
+          src="http://xmage.club/Fk8p5x76uibm4jnMTNjgEY1ca5aP"
           alt=""
       /></van-swipe-item>
     </van-swipe>
 
     <!-- 绿色条 -->
-    <div class="lutiao">
+    <div class="lutiao" @click="kaitong">
       <img src="http://xmage.club/FoMEtRLDFR-1HpXeaZoH1QTIFDNY" alt="" />
     </div>
 
     <!-- 近期热播 -->
+    <div class="rebo">近期热播</div>
+    <!-- 剧 -->
+
     <van-grid :border="false" :column-num="3">
-      <van-grid-item>
-        <img src="http://xmage.club/FtnoRvnqEUJ-zCHx6zTaYnF2ZWus" alt="" />
-        <div class="juming">绀青之拳</div>
-        <div class="jianjie">蓝宝石之“绀请之泉”</div>
-      </van-grid-item>
-      <van-grid-item>
-        <img src="http://xmage.club/FpI2NDXKYSpl7iU-VIID8SBtdx9m" alt="" />
-      </van-grid-item>
-      <van-grid-item>
-        <img src="http://xmage.club/FsIaf80bgYX3OgZbRQT3n3e7GcF8" alt="" />
-      </van-grid-item>
-      <van-grid-item>
-        <img src="http://xmage.club/FnOXctRSRD0oOo7fiVj3iDoR_F-X" alt="" />
-      </van-grid-item>
-      <van-grid-item>
-        <img src="http://xmage.club/Fmb0HoFpPzDzU7aqP5mkJ5cqijHo" alt="" />
-      </van-grid-item>
-      <van-grid-item>
-        <img src="http://xmage.club/FsclhbaPJ6Uq9W26c9z2QjtM2VpJ" alt="" />
+      <van-grid-item v-for="(item, index) in jinqi" :key="index">
+        <img :src="item.jutu" alt="" />
+        <div class="juming">{{ item.juming }}</div>
+        <div class="jianjie">{{ item.jujieshao }}</div>
       </van-grid-item>
     </van-grid>
+    <!-- 换一批 -->
+    <div class="huanyipi">
+      <img src="http://xmage.club/FiQSxlMzy6Cj3wdsgepgA4v9fNyg" alt="" />
+      <img src="http://xmage.club/FjVfMR0j1LZHYAAsmo8-LbZDYwrD" alt="" />
+    </div>
+
+    <!-- 主题动画 -->
+    <div class="rebo">主题动画</div>
+
+    <van-grid :border="false" :column-num="3">
+      <van-grid-item v-for="(it, index) in donghua" :key="index">
+        <img :src="it.dhtu" alt="" />
+        <div class="juming">{{ it.dhming }}</div>
+        <div class="jianjie">{{ it.dhjieshao }}</div>
+      </van-grid-item>
+    </van-grid>
+
+    <!-- 换一批 -->
+    <div class="huanyipi">
+      <img src="http://xmage.club/FiQSxlMzy6Cj3wdsgepgA4v9fNyg" alt="" />
+      <img src="http://xmage.club/FjVfMR0j1LZHYAAsmo8-LbZDYwrD" alt="" />
+    </div>
+
+    <!-- 查看所有影片 -->
+    <div class="suoyou">查看所有影片</div>
+    <!-- 广告 -->
+    <div class="guanggao">
+      <img src="http://xmage.club/FhKjvdp0hTkM1OEpZCbcsjhmAfUL" alt="" />
+    </div>
   </div>
 </template>
 
@@ -93,26 +110,6 @@
 
 
 <style scoped>
-/* 近期热播 */
-.juming {
-  width: 109px;
-  text-align: left;
-  font-size: 18px;
-}
-.jianjie {
-  width: 109px;
-  text-align: left;
-  font-size: 14px;
-  color: #999;
-}
-
-/* 绿色条 */
-.lutiao {
-  width: 345px;
-  height: 100px;
-  margin: -15px auto 0;
-}
-
 /* 导航栏 */
 .nav {
   width: 375px;
@@ -160,17 +157,66 @@
   font-size: 20px;
   text-align: center;
 }
+
 .lun_img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+}
+/* 绿色条 */
+.lutiao {
+  width: 345px;
+  height: 100px;
+  margin: 5px auto 0;
+}
+
+/* 近期热播 */
+.rebo {
+  width: 340px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* 剧 */
+.juming {
+  width: 109px;
+  text-align: left;
+  font-size: 18px;
+  height: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.jianjie {
+  width: 109px;
+  text-align: left;
+  font-size: 14px;
+  color: #999;
+  height: 40px;
+}
+/* 换一批 */
+.huanyipi {
+  width: 62px;
+  height: 20px;
+  margin: 0 auto 20px;
+}
+/* 查看所有影片 */
+.suoyou {
+  width: 90%;
+  height: 44px;
+  font-size: 18px;
+  line-height: 44px;
+  margin: 0 auto 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  color: #616798;
+}
+/* 广告 */
+.guanggao {
+  margin: 0 0 20px 0;
 }
 </style>
-
-
-
-
-
-
 
 <script>
 export default {
@@ -199,7 +245,88 @@ export default {
           li: "资讯",
         },
       ],
+      leixing: [
+        {
+          mingcheng: "近期热播",
+        },
+        {
+          mingcheng: "主题动画",
+        },
+      ],
+
+      jinqi: [
+        {
+          jutu: "http://xmage.club/FtnoRvnqEUJ-zCHx6zTaYnF2ZWus",
+          juming: "绀青之拳",
+          jujieshao: "蓝宝石之“绀请之泉”",
+        },
+        {
+          jutu: "http://xmage.club/FpI2NDXKYSpl7iU-VIID8SBtdx9m",
+          juming: "零的执行人",
+          jujieshao: "大规模的恐怖袭击",
+        },
+        {
+          jutu: "http://xmage.club/FsIaf80bgYX3OgZbRQT3n3e7GcF8",
+          juming: "唐红的恋歌",
+          jujieshao: "”早月杯”百人一首",
+        },
+        {
+          jutu: "http://xmage.club/FnOXctRSRD0oOo7fiVj3iDoR_F-X",
+          juming: "纯黑的噩梦",
+          jujieshao: "黑暗组织的杀戮",
+        },
+        {
+          jutu: "http://xmage.club/Fmb0HoFpPzDzU7aqP5mkJ5cqijHo",
+          juming: "业火的向日葵",
+          jujieshao: "被烧毁的梵高名画",
+        },
+        {
+          jutu: "http://xmage.club/FsclhbaPJ6Uq9W26c9z2QjtM2VpJ",
+          juming: "异次元的狙击手",
+          jujieshao: "谜团”海豹突击队”",
+        },
+      ],
+      donghua: [
+        {
+          dhtu: "http://xmage.club/FtVWICIb7WeUp5OTusPgDVyX9w1k",
+          dhming: "新婚旅行飓风",
+          dhjieshao: "丢失的广志",
+        },
+        {
+          dhtu: "http://xmage.club/FgPYssxO5r8P1tj35aDik7oD2T2R",
+          dhming: "梦境世界大突击",
+          dhjieshao: "广志一家大突击",
+        },
+        {
+          dhtu: "http://xmage.club/FpqlnmuS7u-Hysck5L81WaCb5sy2",
+          dhming: "超时空!呼风唤雨之我的新娘",
+          dhjieshao: "黄金间谍大作战",
+        },
+        {
+          dhtu: "http://xmage.club/FqQs3hZfTYIWj5lG0xOkl8MrbPPf",
+          dhming: "决一胜负!逆袭的机器人爸爸",
+          dhjieshao: "逆袭的机器人爸爸",
+        },
+        {
+          dhtu: "http://xmage.club/Fs-eIzn3piY0B81fv54f_SpwaXbO",
+          dhming: "呐喊!春日部野生王国",
+          dhjieshao: "春日部野生王国",
+        },
+        {
+          dhtu: "http://xmage.club/FpGRE9hzZbIFyri5fnLcfAWTpXt-",
+          dhming: "呼风唤雨!金矛之勇者",
+          dhjieshao: "金矛之勇者",
+        },
+      ],
     };
+  },
+  methods: {
+    fanhui() {
+      this.$router.go(-1);
+    },
+    kaitong() {
+      this.$router.push({ path: "kaitong" });
+    },
   },
 };
 </script>

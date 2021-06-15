@@ -89,6 +89,9 @@ export default {
     go(ip) {
       this.$router.push({ path: ip });
     },
+    onClickLeft() {
+      this.$router.go(-1);
+    },
   },
 };
 </script> 

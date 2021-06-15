@@ -380,6 +380,7 @@ export default {
   border-right: 1px solid #eee;
 }
 
+/* 横向滚动 */
 .baokuang {
   width: 340px;
   margin: 20px auto 0;
