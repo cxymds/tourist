@@ -2,7 +2,9 @@
   <div>
     <div class="head_box">
       <div class="left_box">咖咖助手</div>
-      <div class="right_box"><van-icon name="chat-o" badge="3" /></div>
+      <div class="right_box" @click="tongzhi">
+        <van-icon name="chat-o" badge="3" />
+      </div>
     </div>
     <div class="img_box">
       <van-image src="http://xmage.club/Fs9rKV0QiT1Hnmtyl6c3VyqCUMbZ" />
@@ -157,6 +159,11 @@ export default {
   name: "cc",
   components: {
     tapbar: menu,
+  },
+  methods: {
+    tongzhi() {
+      this.$router.push({ path: "/tongzhi" });
+    },
   },
 };
 </script>
