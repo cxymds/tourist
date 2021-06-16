@@ -43,31 +43,27 @@
     </div>
     <!-- 热门搜索 -->
     <div class="remen">热门搜索</div>
-
-    <van-list
-      v-model:loading="state.loading"
-      :finished="state.finished"
-      finished-text="没有更多了"
-      @load="onLoad"
-    >
-      <van-cell v-for="item in state.list" :key="item" :title="item" />
-    </van-list>
+    <!-- 搜索目录 -->
+    <div class="mulu">
+      <div class="mulu_xv mulu_a">1</div>
+      <div class="mulu_wen">绀青之拳</div>
+    </div>
+    <div class="mulu">
+      <div class="mulu_xv mulu_b">2</div>
+      <div class="mulu_wen">零的执行人</div>
+    </div>
+    <div class="mulu">
+      <div class="mulu_xv mulu_c">3</div>
+      <div class="mulu_wen">唐红的恋歌</div>
+    </div>
+    <div class="mulu" v-for="(lu, index) in sou" :key="index">
+      <div class="mulu_xv">{{ lu.num }}</div>
+      <div class="mulu_wen">{{ lu.ming }}</div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-/* 热门搜索 */
-.remen {
-  box-sizing: border-box;
-  width: 375px;
-  border: 1px solid #000;
-  padding-left: 15px;
-  text-align: left;
-  margin-top: 40px;
-  color: #999999;
-  font-weight: 600;
-}
-
 /* 搜索 */
 .sousuo {
   display: flex;
@@ -126,41 +122,54 @@
   color: #666666;
   border-radius: 8px;
 }
+
+/* 热门搜索 */
+.remen {
+  box-sizing: border-box;
+  width: 375px;
+  padding-left: 15px;
+  text-align: left;
+  margin-top: 40px;
+  color: #999999;
+  font-weight: 600;
+}
+/* 搜索目录 */
+.mulu {
+  width: 340px;
+  height: 20px;
+  line-height: 20px;
+  margin: 20px auto 0;
+  display: flex;
+}
+.mulu_xv {
+  text-align: center;
+  background-color: #f4f5fa;
+  width: 20px;
+  height: 20px;
+  color: #616798;
+  border-radius: 7px;
+  font-size: 12px;
+}
+.mulu_a {
+  background-color: #ff5a57;
+  color: #fff;
+}
+.mulu_b {
+  background-color: #ff9800;
+  color: #fff;
+}
+.mulu_c {
+  background-color: #ffd502;
+  color: #fff;
+}
+.mulu_wen {
+  text-indent: 10px;
+}
 </style>
 
 <script>
 import { reactive } from "vue";
 export default {
-  setup() {
-    const state = reactive({
-      list: [],
-      loading: false,
-      finished: false,
-    });
-
-    const onLoad = () => {
-      // 异步更新数据
-      // setTimeout 仅做示例，真实场景中一般为 ajax 请求
-      setTimeout(() => {
-        for (let i = 0; i < 10; i++) {
-          state.list.push(state.list.length + 1);
-        }
-
-        // 加载状态结束
-        state.loading = false;
-
-        // 数据全部加载完成
-        if (state.list.length >= 40) {
-          state.finished = true;
-        }
-      }, 1000);
-    };
-
-    return {
-      state,
-      onLoad,
-    };
-  },
   data() {
     return {
       lishi: [
@@ -175,6 +184,32 @@ export default {
         },
         {
           li: "樱桃小丸子",
+        },
+      ],
+      sou: [
+        {
+          num: "4",
+          ming: "纯黑的噩梦",
+        },
+        {
+          num: "5",
+          ming: "业火的向日葵",
+        },
+        {
+          num: "6",
+          ming: "新婚旅行飓风",
+        },
+        {
+          num: "7",
+          ming: "梦境世界大突击",
+        },
+        {
+          num: "8",
+          ming: "哆啦A梦超级大电影",
+        },
+        {
+          num: "9",
+          ming: "异次元的狙击手",
         },
       ],
     };
