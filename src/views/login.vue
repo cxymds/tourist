@@ -10,26 +10,30 @@
         <van-field
           class="tel"
           v-model="user.phone"
+          icon-prefix="tel_icon"
           type="tel"
-          left-icon="http://xmage.club/Fk43hhB9NScMBOFpNxiYY9Nd97uE"
+          left-icon="http://xmage.club/FmyZFLf6JyrOQWIX2kunEeb-lSiR"
           placeholder="手机号码"
           name="手机号码"
-          placeholder-color="#ffffff"
           :rules="telRules"
-        />
-        <div class="yzm">
-          <van-button
-            type="info"
-            @click="gain"
-            class="yzmm"
-            v-bind:disabled="dis"
-            >{{ value }}</van-button
-          >
-        </div>
+        >
+          <template #button>
+            <van-button
+              size="small"
+              type="primary"
+              class="yzmm"
+              @click="gain"
+              v-bind:disabled="dis"
+              >{{ value }}</van-button
+            >
+          </template>
+        </van-field>
+
         <van-field
           class="codes"
           v-model="user.code"
           type="digit"
+          icon-prefix="codes_icon"
           left-icon="http://xmage.club/FpOQGOXKJrkT3wMQQEu13t34nP5T"
           :rules="[{ required: true, message: '请填写验证码' }]"
           placeholder="验证码"
@@ -156,21 +160,24 @@ export default {
   line-height: 15px;
   text-align: center;
 }
+/* 郭小峰 */
 .app .form .tel {
-  margin-bottom: 35px;
+  margin: 0 auto 35px;
   border-radius: 10px;
-  width: 270px;
+  width: 340px;
   background-color: rgba(218, 218, 218, 0.5);
 }
-/* 郭小峰 */
-
-/* 郭小峰 */
-
 .app .form .codes {
+  margin: 0 auto;
   border-radius: 10px;
   background-color: rgba(218, 218, 218, 0.5);
-  width: 270px;
+  width: 340px;
 }
+.app .form .codes_icon {
+  margin-top: 2px;
+}
+
+/* 郭小峰 */
 .app .form .tijiao {
   background-color: #ff9800;
   border-color: #ff9800;
@@ -178,17 +185,15 @@ export default {
   border-radius: 10px;
   color: #fff;
 }
-.app .form .yzm .yzmm {
+/* 郭小峰修改 */
+
+.app .form .yzmm {
   background-color: #ff9800;
   border-color: #ff9800;
   border-radius: 10px;
+  width: 78px;
+  height: 32px;
 }
-/* 郭小峰修改 */
-.yzmm {
-  width: 104px;
-  height: 44px;
-}
-
 /* 郭小峰修改 */
 
 .app {
@@ -207,6 +212,12 @@ export default {
 .app .form {
   padding-top: 80px;
 }
+/* 郭小峰 */
+.app .form .tel_icon {
+  margin-top: 6px;
+}
+/* 郭小峰 */
+
 .yzm {
   position: absolute;
   top: 307px;
@@ -246,6 +257,5 @@ export default {
   font-size: 18px;
   font-weight: 500;
 }
-
 /* 郭小峰修改 */
 </style>
