@@ -14,6 +14,7 @@ import assistant from './assistant'
 import tongxun from './zhutika/tongxun'
 import kayingyuan from './zhutika/kayingyuan'
 
+import kadangan from './zhutika/kadangan'
 
 
 const routes = [
@@ -52,6 +53,8 @@ const routes = [
   ...kayingyuan
   ,
   ...Personal
+  ,
+  ...kadangan
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

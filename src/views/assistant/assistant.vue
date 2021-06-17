@@ -57,7 +57,7 @@
       <span class="label_right"></span>
     </div>
     <div class="lcon_bar">
-      <a href="" class="lcon_box">
+      <a href="/kadangan" class="lcon_box">
         <div class="box_1" style="background-color: #1d65e3">
           <van-image src="http://xmage.club/FmUMW89tckXRgZ3GJuzccnxhP9Eo" />
         </div>
