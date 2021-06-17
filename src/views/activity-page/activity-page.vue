@@ -126,12 +126,15 @@
     <tapbar></tapbar>
   </div>
 </template>
+<script>
+export default {
+  // beforeCreate(){
+  //   console.log(1111)
+  // }
+  
+}
+</script>
 <style scoped>
-/* @media screen and(min-device-width:0px) and (max-device-width: 279px){
-  .box-outer{
-    display: none;
-  }
-} */
 router-link-active{
 color: green;   
 }
