@@ -27,100 +27,7 @@
       </div>
     </div>
     <div class="content">
-      <router-link
-        target="_self"
-        :to="{ path: '/activity-attention', query: { id: '1' } }"
-      >
-        <div class="list_block">
-          <!--第一块早餐-->
-          <div class="icon">
-            <van-icon class="facestar" name="like-o" size="40" />
-            <van-icon class="obversestar" name="like" size="40" color="red" />
-          </div>
-          <img
-            src="http://xmage.club/Fq8l1hv5DY0oPWlYMHEb8JJK8Ogz"
-            alt="温情早餐"
-          />
-          <div class="title">温情早餐</div>
-          <div class="words">7：30-至9：00开放</div>
-          <div class="little_title">美食区</div>
-        </div>
-      </router-link>
-      <div class="list_block">
-        <router-link
-        target="_self"
-        :to="{ path: '/activity-attention', query: { id: '1' } }"
-      >
-        <!--第二块早餐-->
-        <div class="icon">
-          <van-icon class="facestar" name="like-o" size="40" />
-          <!-- <van-icon class="obversestar" name="like" size="40" color="red" /> -->
-        </div>
-        <img
-          src="http://xmage.club/Fqce2KNw0aElOaRzpLkXoTPSgUOv"
-          alt="温情早餐"
-        />
-        <div class="title">美食街活动</div>
-        <div class="words">9：30-至11：00开放</div>
-        <div class="little_title">美食区</div>
-        </router-link>
-      </div>
-      <div class="list_block">
-        <!--第三块早餐-->
-        <div class="icon">
-          <van-icon class="facestar" name="like-o" size="40" />
-          <van-icon class="obversestar" name="like" size="40" color="red" />
-        </div>
-        <img
-          src="http://xmage.club/FkENlSRLVqqux6pDLCBKFQWQEBjx"
-          alt="温情早餐"
-        />
-        <div class="title">欢乐儿童乐园</div>
-        <div class="words">13：30-至15：30开放</div>
-        <div class="little_title">美食区</div>
-      </div>
-      <div class="list_block">
-        <!--第四块早餐-->
-        <div class="icon">
-          <van-icon class="facestar" name="like-o" size="40" />
-          <van-icon class="obversestar" name="like" size="40" color="red" />
-        </div>
-        <img
-          src="http://xmage.club/FjmzERw1tjI045h0mQdh0xlQn9wS"
-          alt="温情早餐"
-        />
-        <div class="title">亲自烘培</div>
-        <div class="words">13：00-至17：30开放</div>
-        <div class="little_title">美食区</div>
-      </div>
-      <div class="list_block">
-        <!--第五块早餐-->
-        <div class="icon">
-          <van-icon class="facestar" name="like-o" size="40" />
-          <van-icon class="obversestar" name="like" size="40" color="red" />
-        </div>
-        <img
-          src="http://xmage.club/FsaPsrZ0J24sVYLjAUgZMZCy1QP0"
-          alt="温情早餐"
-        />
-        <div class="title">主题电影院</div>
-        <div class="words">13：00-至17：30开放</div>
-        <div class="little_title">美食区</div>
-      </div>
-      <div class="list_block">
-        <!--第六块早餐-->
-        <div class="icon">
-          <van-icon class="facestar" name="like-o" size="40" />
-          <van-icon class="obversestar" name="like" size="40" color="red" />
-        </div>
-        <img
-          src="http://xmage.club/FisJsCdOXJ1W8U_DrVDSRTPGQmRh"
-          alt="温情早餐"
-        />
-        <div class="title">夜光派对</div>
-        <div class="words">20：00-至24：00开放</div>
-        <div class="little_title">美食区</div>
-      </div>
+
     </div>
 
     <tapbar></tapbar>
@@ -218,6 +125,15 @@ import menu from "@/components/Nav.vue";
 
 import { Toast } from "vant";
 export default {
+  methods:{
+    gain(){
+      this.axios.get('/api/active',{params:{mobile:this.user.phone}}).then((data)=>{
+        console.log(data)
+      }).catch((err)=>{
+        console.log(err)
+      })
+    }
+  },  
   name: "cc",
   components: {
     tapbar: menu,

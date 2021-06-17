@@ -6,7 +6,7 @@ import recommend from './recommend'
 import zhutizhuanwang from './zhutika/zhutizhuanwang'
 import release from './Release'
 import Personal from './Personal'
-
+import hotel from './zhutika/hotel'
 import news from './news'
 
 
@@ -53,6 +53,8 @@ const routes = [
   ...kayingyuan
   ,
   ...Personal
+  ,
+  ...hotel
   ,
   ...kadangan
 ]
