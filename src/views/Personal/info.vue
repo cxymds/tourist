@@ -3,7 +3,7 @@
     <div class="infoone">
         <div class="infoone1" @click="tab">
             <div class="tu"><img src="http://xmage.club/FtttM4fwr6bB-4ycm1wY0MEpzzBe" alt=""></div>
-            <div class="zi"><span>返回</span></div>
+            <a href="/Personal" class="zi"><span>返回</span></a>
         </div>
         <div class="infoone2"><span>个人信息</span></div>
     </div>
@@ -94,6 +94,7 @@ export default {
     display: block;
     font-weight: bold;
     padding-right: 13px;
+    color: #000;
 }
 .info .infoone .infoone2{
     margin-left: 42px;

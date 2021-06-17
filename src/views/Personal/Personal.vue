@@ -9,7 +9,7 @@
         <div class="information">
             <div class="in_box">
                 <div class="top_box">
-                    <a href="" class="inform_box">
+                    <a href="/info" class="inform_box">
                         <div class="left_img"><van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" /></div>
                         <div class="text">
                             <span class="text_top">我叫新之助</span>
