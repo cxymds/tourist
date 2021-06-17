@@ -18,17 +18,17 @@
       </div>
     </div>
     <!-- 搜索 -->
-    <div class="sousuo">
+    <div class="sousuo" @click="sousuo">
       <div class="sousuo_search">
         <van-search v-model="value" placeholder="哆啦A梦大电影[热搜]" />
       </div>
-      <div class="fenlie">
+      <div class="fenlie" @click="fenlei">
         <div class="fenlie_img">
           <img src="http://xmage.club/FlQy5OTJjIS7WA1esfr2WdqVaPUd" alt="" />
         </div>
         <div class="fenlie_wenzi">分类</div>
       </div>
-      <div class="kanguo">
+      <div class="kanguo" @click="kanguo">
         <div class="kanguo_img">
           <img src="http://xmage.club/FirKOTVvpZprnHkKA9mvJacS-gRC" alt="" />
         </div>
@@ -326,6 +326,15 @@ export default {
     },
     kaitong() {
       this.$router.push({ path: "kaitong" });
+    },
+    fenlei() {
+      this.$router.push({ path: "fenlei" });
+    },
+    kanguo() {
+      this.$router.push({ path: "kanguo" });
+    },
+    sousuo() {
+      this.$router.push({ path: "sousuo" });
     },
   },
 };
