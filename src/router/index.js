@@ -54,11 +54,9 @@ const routes = [
   ,
   ...Personal
   ,
-<<<<<<< HEAD
   ...hotel
-=======
+  ,
   ...kadangan
->>>>>>> f56b0109d7eb72325773e77913d1a49b1d6eafaa
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
