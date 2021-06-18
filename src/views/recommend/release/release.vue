@@ -6,11 +6,15 @@
         </div>
         <van-pull-refresh v-model="state.loading" @refresh="onRefresh">
             <div class="box_text">
-                <div class="box_x">
+                <div class="box_x"  v-for="item in list" :key="item.id">
                    <div class="left_box">
-                       <van-image  src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+                       <img :src="item.active_img"/>
                     </div>
-                   <div class="right_box"></div> 
+                   <div class="right_box">
+                        <div class="rightone">{{item.name}}</div>
+                        <div class="righttwo">{{item.position}}</div>
+                        <div class="rightthree">{{item.end_time}}</div>
+                    </div> 
                 </div>
             </div>
         </van-pull-refresh>
@@ -19,8 +23,29 @@
 <script>
 import { reactive } from 'vue';
 import { Toast } from 'vant';
-
 export default {
+    data(){
+        return{
+            list:[]
+        }
+    },
+  beforeCreate(){
+    var that = this;
+    const usertoken = window.localStorage.getItem("token")
+    console.log(usertoken)
+    this.axios({
+        method:'get',
+        url:'/api/active',
+        headers:{
+            'Authorization':usertoken
+        }
+    }).then((res)=>{
+        console.log(res.data.data)
+        that.list=res.data.data;
+    }).catch((err)=>{
+        console.log(err)
+    })
+  },
   setup() {
     const state = reactive({
       count: 0,
@@ -33,7 +58,6 @@ export default {
         state.count++;
       }, 1000);
     };
-
     return {
       state,
       onRefresh,
@@ -41,7 +65,20 @@ export default {
   },
 };
 </script>
-<style>
+<style lang="less">
+.box_text .box_x .right_box{
+    display: flex;
+    width: 240px;
+    height: 100%;
+    flex-direction: column;
+    div{
+        width: 100%;
+        height: 33%;
+        padding-left: 10px;
+        background-color: blueviolet;
+        margin: 2px 0px;
+    }
+}
 .head{
     width: 100%;
     height: 2.5em; 
@@ -59,7 +96,6 @@ export default {
     top: 20%;
 }
 .head .return a{
-    
     font-size: 17px;
     color: #000;
 }
@@ -81,5 +117,9 @@ export default {
 .box_text .box_x .left_box{
     width: 132px;
     height: 100%;
+    img{
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>

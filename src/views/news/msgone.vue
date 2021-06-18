@@ -133,67 +133,68 @@ export default {
                   name:'小爱',
                   msg:'小新陛下，小爱稍后就到',
                   date:'12-30',
-                  new:'2'
+              },{
+                  head:'http://xmage.club/FtoKx6R2k8OcoKxUhjj3vqBJU-4v',
+                  name:'春日部防卫队',
+                  msg:'今晚有派对哦~',
+                  date:'12-30',
               },
               {
-                  head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                  name:'小马',
+                  head:'http://xmage.club/FuytW-b6aKl5xG7-nE6Uz0DKelJU',
+                  name:'小叶',
                   msg:'今天天气真不错啊',
                   date:'12-30',
-                  new:'1'
               },{
-                  head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                  name:'小狗',
+                  head:'http://xmage.club/FucDh_7u4my21hv5yrD-QwBG1h8K',
+                  name:'小马',
                   msg:'小狗真可爱',
                   date:'12-30',
-                  new:'1'
-              },{
-                  head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                  name:'小狗',
-                  msg:'小狗真可爱',
-                  date:'12-30',
-                  new:'1'
-              },{
-                  head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                  name:'小狗',
-                  msg:'小狗真可爱',
-                  date:'12-30',
-                  new:'1'
               }
         ],
         group:[
-            {
-                head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                name:'群组一'
+             {
+                name:'春日部防卫队',
+                head:'http://xmage.club/FtoKx6R2k8OcoKxUhjj3vqBJU-4v'
             },
             {
-                head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                name:'群组二'
+                head:'http://xmage.club/FqPSAg89ZttLA7duVjecygY4CvhT',
+                name:'饭罪团伙'
             },
             {
-                head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                name:'群组三'
+                head:'http://xmage.club/FodPvsG-wfH4fe6MtYPojrPaw9DC',
+                name:'技术交流'
             }
+           
         ],
         person:[
-            {
+             {
                 head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                name:'联系人一'
+                name:'小爱'
             },
             {
-                head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                name:'联系人二'
+                head:'http://xmage.club/FuytW-b6aKl5xG7-nE6Uz0DKelJU',
+                name:'小叶'
             },
             {
-                head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                name:'联系人三'
+                head:'http://xmage.club/FucDh_7u4my21hv5yrD-QwBG1h8K',
+                name:'小马'
             }
+           
         ]
       }
   }
 };
 </script>
 <style lang="less">
+.three2a>img{
+    width: 100%;
+    height: 100%;
+
+}
+.two2a>img{
+    width: 60px;
+    height: 60px;
+}
 .tan{
     display: flex;
     flex-direction: column;
@@ -340,16 +341,16 @@ export default {
     text-align: right;
     line-height: 24px;
 }
-.all .one .one2 .one2c .one2cbottom .yuan{
-    width: 18px;
-    height: 18px;
-    background-color:red;
-    border-radius: 50%;
-    color: #fff;
-    text-align: center;
-    line-height: 19px;
-    margin-left: 80px;
-    margin-top: 6px;
-}
+// .all .one .one2 .one2c .one2cbottom .yuan{
+//     width: 18px;
+//     height: 18px;
+//     background-color:red;
+//     border-radius: 50%;
+//     color: #fff;
+//     text-align: center;
+//     line-height: 19px;
+//     margin-left: 80px;
+//     margin-top: 6px;
+// }
 
 </style>

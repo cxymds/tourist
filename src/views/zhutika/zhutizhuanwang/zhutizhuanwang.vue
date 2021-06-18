@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="mingcheng">套餐名称：流量包 3000MB</div>
-      <div class="qixian">套餐期限：2020/12/30 12:00 PM 到期</div>
+      <div class="qixian">套餐期限：2021/7/20 12:00 PM 到期</div>
     </div>
 
     <div class="denglu">
@@ -127,9 +127,11 @@
     </div>
 
     <div>
-      <van-button type="primary" block round size="small" id="van_but"
-        >立即购买</van-button
-      >
+      <van-button type="primary" text="立即购买" @click="showNotify" />
+      <van-notify v-model:show="shows" type="primary">
+        <van-icon name="bell" style="margin-right: 4px;" />
+        <span>购买成功</span>
+      </van-notify>
     </div>
 
     <div class="zuijingoumai">
@@ -160,11 +162,19 @@ export default {
     const onClickLeft = () => Toast("返回");
     const checked = ref(false);
     const show = ref(false);
-
+    const shows = ref(false);
+     const showNotify = () => {
+      shows.value = true;
+      setTimeout(() => {
+        shows.value = false;
+      }, 2000);
+    };
     return {
       onClickLeft,
       checked,
       show,
+      showNotify,
+      shows
     };
   },
   name: "",
@@ -202,20 +212,15 @@ export default {
       ],
       jilu: [
         {
-          ming: "流量包 3000MB",
+          ming: "流量包 200MB",
           jin: "88.00",
-          shijian: "2020/12/30",
+          shijian: "2021/6/21",
         },
         {
-          ming: "流量包 3000MB",
-          jin: "88.00",
-          shijian: "2020/12/30",
-        },
-        {
-          ming: "流量包 3000MB",
-          jin: "88.00",
-          shijian: "2020/12/30",
-        },
+          ming: "流量包 500MB",
+          jin: "188.00",
+          shijian: "2021/6/21",
+        }
       ],
     };
   },
@@ -242,6 +247,12 @@ export default {
 
 <style scoped>
 /* 主题专网 */
+.van-button--normal{
+  border-radius: 15px;
+  width: 125px;
+  height: 41px;
+  margin-right: 19px;
+}
 .navbar {
   height: 44px;
   display: flex;

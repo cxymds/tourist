@@ -39,10 +39,10 @@
             </div>
         </div>
         <div class="order">
-            <div class="my_order">
+            <div class="my_order" @click="order">
                 <span class="my_box_left">我的订单</span>
-                <span class="my_box_right">
-                    <a href="">所有订单 ></a>
+                <span class="my_box_right" >
+                    所有订单 >
                 </span>
             </div>
             <div class="order_box">
@@ -122,16 +122,19 @@
         </div>
     </div>
       <tapbar></tapbar>
-
 </template>
 <script>
- import menu from '@/components/Nav.vue'
+import menu from '@/components/Nav.vue'
 export default {
+    methods:{
+        order(){
+            this.$router.push('/myorder');
+        }
+    },
     name: 'cc',
-  components:{
+    components:{
     tapbar:menu
   }
-
 }
 </script>
 <style>

@@ -2,7 +2,7 @@
   <div>
     <div class="head_box">
       <div class="left_box">2020/12/30</div>
-      <a href="" class="right_box">我的关注</a>
+      <div class="right_box" @click="guanzhu">我的关注</div>
     </div>
     <div class="week">
       <div class="week_box">
@@ -35,10 +35,14 @@
       </div>
     </div>
     <div class="beg_box">
-
-
-
-
+      <div class=boxall v-for="item in list" :key="item.id" @click="tab">
+        <div class="boxone"><img :src="item.active_img" alt=""></div>
+        <div class="boxtwo">
+          <div class="boxtwo1">{{item.name}}</div>
+          <div class="boxtwo2">{{item.start_time}}至{{item.end_time}}</div>
+          <div class="boxtwo3">{{item.position}}</div>
+        </div>
+      </div>
     </div>
   </div>
   <tapbar></tapbar>
@@ -47,13 +51,85 @@
 import menu from "@/components/Nav.vue";
 
 export default {
+  methods:{
+    tab(){
+       this.$router.push('/acxiangqing');
+    },
+    guanzhu(){
+       this.$router.push('/acfollow');
+    }
+  },
+  beforeCreate(){
+        var that = this;
+        const usertoken = window.localStorage.getItem("token")
+        console.log(usertoken)
+        this.axios({
+            method:'get',
+            url:'/api/active',
+            headers:{
+                'Authorization':usertoken
+            }
+        }).then((res)=>{
+            console.log(res.data.data)
+            that.list=res.data.data;
+        }).catch((err)=>{
+            console.log(err)
+        })
+  },
   name: "cc",
   components: {
     tapbar: menu,
   },
+  data(){
+    return{
+      list:[]
+    }
+
+  }
 }
 </script>
-<style>
+<style lang="less">
+.boxall{
+  margin-top: 10px;
+}
+.boxall>div{
+  line-height: 34px;
+}
+
+.beg_box .boxall .boxtwo{
+  display: flex;
+  flex-direction: column;
+  div{
+    width: 100%;
+    height: 33%;
+    background-color: cadetblue;
+    margin: 2px 0;
+  }
+
+}
+.beg_box .boxall .boxone>img{
+  width: 100%;
+  height: 100%;
+
+}
+
+.beg_box .boxall .boxtwo{
+  flex-grow: 2;
+}
+.beg_box .boxall>div{
+  width: 135px;
+  background-color: burlywood;
+  height: 100%;
+  margin: 0 2px;
+}
+
+.beg_box .boxall{
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  background-color: blueviolet;
+}
 bady{
   height: 100%;
 }

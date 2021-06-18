@@ -56,24 +56,14 @@ export default {
                 {
                     head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
                     name:'小爱',
-                    msg:'干嘛呢？'
-
-                },{
-                    head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                    name:'小爱',
-                    msg:'干嘛呢？'
+                    msg:'今晚有活动？'
                 }
             ],
             right:[
                 {
-                    head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                    name:'小狗',
-                    msg:'没干嘛!'
-
-                },{
-                    head:'http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_',
-                    name:'小狗',
-                    msg:'没干嘛!'
+                    head:'http://xmage.club/FuytW-b6aKl5xG7-nE6Uz0DKelJU',
+                    name:'小叶',
+                    msg:'好的，马上准备'
                 }
             ]
         }

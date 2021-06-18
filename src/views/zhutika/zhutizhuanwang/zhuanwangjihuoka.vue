@@ -19,10 +19,12 @@
       <!-- 卡密 -->
       <div class="kami">卡密</div>
       <!-- 请输入卡密 -->
-      <input type="text" id="qingshuru_kami" placeholder="请输入卡密" />
-      <van-button type="primary" class="jihuo_button" round block
-        >激活</van-button
-      >
+      <input type="password" id="qingshuru_kami" placeholder="请输入卡密" />
+      <van-button type="primary" text="立即激活" @click="showNotify" />
+      <van-notify v-model:show="show" type="success">
+        <van-icon name="bell" style="margin-right: 4px;" />
+        <span>激活成功</span>
+      </van-notify>
     </div>
     <!-- 声明 -->
     <div class="shengming">
@@ -38,6 +40,13 @@ html {
 </style>
 
 <style scoped>
+.van-button{
+  margin-top: 10px;
+  width: 310px;
+  border-radius: 15px;
+  background-color: #07C160;
+  border: 1px solid #07C160;  
+}
 .guanggao {
   width: 345px;
   height: 103px;
@@ -112,11 +121,21 @@ html {
 
 <script>
 import { Toast } from "vant";
+import { ref } from 'vue';
 export default {
   setup() {
+    const show = ref(false);
     const onClickLeft = () => Toast("返回");
+    const showNotify = () => {
+      show.value = true;
+      setTimeout(() => {
+        show.value = false;
+      }, 2000);
+    };
     return {
       onClickLeft,
+      show,
+      showNotify,
     };
   },
   data() {
