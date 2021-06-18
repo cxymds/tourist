@@ -1,37 +1,5 @@
 <template>
-  <div class="box-outer">
-    <!--外围盒子-->
-    <div class="inbox">
-      <div class="topnav">
-        <van-nav-bar
-          left-text="2020/12/30"
-          right-text="我的关注"
-          @click-left="onClickLeft"
-          @click-right="onClickRight"
-        /><!--顶部框-->
-      </div>
-
-      <div class="header">
-        <div class="calender">
-          <!--日历-->
-          <van-calendar
-            v-model="show"
-            color="orange"
-            type="range"
-            :show-title="false"
-            :poppable="false"
-            :show-confirm="false"
-            :style="{ height: '130px' }"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="content">
-
-    </div>
-
-    <tapbar></tapbar>
-  </div>
+ 
 </template>
 <style scoped>
 router-link-active{
