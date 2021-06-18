@@ -20,32 +20,25 @@
       <p>主题咖乐园™宣传片</p>
       <p>喜剧·某国·2019·剧情</p>
     </div>
+
+    <!-- 简介 -->
+    <div class="jianjie">
+      <p>导演:鹅厂</p>
+      <p>
+        演员:大张伟/黄子韬/鹿晗/毛不易/宋茜/敖心仪/卞卡/毕少岩/陈
+        珂/陈倩楠/陈柔冰/
+      </p>
+      <p>
+        由腾讯视频出品的能量女团成长综艺，致力于充分展现女孩们自
+        信勇敢、拼搏向上的元气能量和青春态度。节目将召集百余位学
+        员，通过任务、训练、考核，让她们在五位明星教练的带领和引
+        导下成长进步，最终成团。
+      </p>
+    </div>
   </div>
 </template>
 c
 <style scoped>
-/* 宣传片 */
-.xuanchuan {
-  padding: 0 0 0 15px;
-  box-sizing: border-box;
-  text-align: left;
-  width: 375px;
-  margin: 0 auto;
-  height: 65px;
-  border-bottom: 1px solid rgb(240, 240, 240);
-}
-
-.xuanchuan > p:nth-child(1) {
-  font-size: 20px;
-  font-weight: 600;
-}
-.xuanchuan > p:nth-child(2) {
-  font-size: 14px;
-  color: #c6c9cc;
-  font-weight: 600;
-  margin: -15px 0 0 0;
-}
-
 /* 视频 */
 .shiping {
   width: 375px;
@@ -68,6 +61,27 @@ c
 .shiping_v > video {
   width: 375px;
   height: 210px;
+}
+
+/* 宣传片 */
+.xuanchuan {
+  padding: 0 0 0 15px;
+  box-sizing: border-box;
+  text-align: left;
+  width: 375px;
+  margin: 0 auto;
+  height: 65px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+.xuanchuan > p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 600;
+}
+.xuanchuan > p:nth-child(2) {
+  font-size: 14px;
+  color: #c6c9cc;
+  font-weight: 600;
+  margin: -15px 0 0 0;
 }
 </style>
 
