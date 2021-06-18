@@ -67,7 +67,11 @@
     <!-- 剧 -->
 
     <van-grid :border="false" :column-num="3">
-      <van-grid-item v-for="(item, index) in jinqi" :key="index">
+      <van-grid-item
+        v-for="(item, index) in jinqi"
+        :key="index"
+        url="/dianyingxiangqing"
+      >
         <img :src="item.jutu" alt="" />
         <div class="juming">{{ item.juming }}</div>
         <div class="jianjie">{{ item.jujieshao }}</div>
@@ -83,7 +87,11 @@
     <div class="rebo">主题动画</div>
 
     <van-grid :border="false" :column-num="3">
-      <van-grid-item v-for="(it, index) in donghua" :key="index">
+      <van-grid-item
+        v-for="(it, index) in donghua"
+        :key="index"
+        url="/dianyingxiangqing"
+      >
         <img :src="it.dhtu" alt="" />
         <div class="juming">{{ it.dhming }}</div>
         <div class="jianjie">{{ it.dhjieshao }}</div>

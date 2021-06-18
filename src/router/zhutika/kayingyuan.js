@@ -24,4 +24,9 @@ export default[
       name: 'sousuo',
       component:() =>import('@/views/zhutika/kayingyuan/sousuo.vue')
     },
+    {
+      path: '/dianyingxiangqing',
+      name: 'dianyingxiangqing',
+      component:() =>import('@/views/zhutika/kayingyuan/dianyingxiangqing.vue')
+    },
   ]
