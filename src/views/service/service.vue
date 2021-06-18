@@ -22,11 +22,40 @@
                 <van-search v-model="value" placeholder="咖选服务 TOP" />
             </div>      
         </div>
+        <van-pull-refresh v-model="state.loading" @refresh="onRefresh">
+            <van-image width="95%" height="7em" src="http://xmage.club/FpQRzvLczOzMHqjva-8NTOZ90WUE" />
+            <van-tabs v-model:active="active">
+                <van-tab title="咖选">内容 1</van-tab>
+                <van-tab title="火爆美食">内容 2</van-tab>
+                <van-tab title="预约">内容 3</van-tab>
+                <van-tab title="送餐">内容 4</van-tab>
+            </van-tabs>
+        </van-pull-refresh>
+        
     </div>
 </template>
 <script>
 import { ref } from 'vue';
+import { reactive } from 'vue';
+import { Toast } from 'vant';
 export default {
+    setup() {
+    const state = reactive({
+      count: 0,
+      loading: false,
+    });
+    const onRefresh = () => {
+      setTimeout(() => {
+        Toast('刷新成功');
+        state.loading = false;
+        state.count++;
+      }, 1000);
+    };
+     return {
+      state,
+      onRefresh,
+    };
+  },
    data() {
     return {
       list: [
