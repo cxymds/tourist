@@ -26,7 +26,8 @@ import { Toast } from 'vant';
 export default {
     data(){
         return{
-            list:[]
+            list:[],
+            shuju:[]
         }
     },
   beforeCreate(){
@@ -35,13 +36,13 @@ export default {
     console.log(usertoken)
     this.axios({
         method:'get',
-        url:'/api/active',
+        url:'/api/wonderful',
         headers:{
             'Authorization':usertoken
         }
     }).then((res)=>{
         console.log(res.data.data)
-        that.list=res.data.data;
+        that.shuju=res.data.data;
     }).catch((err)=>{
         console.log(err)
     })
