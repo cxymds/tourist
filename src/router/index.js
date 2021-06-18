@@ -8,7 +8,7 @@ import release from './Release'
 import Personal from './Personal'
 import hotel from './zhutika/hotel'
 import news from './news'
-
+import service from './service'
 
 import assistant from './assistant'
 import tongxun from './zhutika/tongxun'
@@ -57,6 +57,8 @@ const routes = [
   ...hotel
   ,
   ...kadangan
+  ,
+  ...service
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
