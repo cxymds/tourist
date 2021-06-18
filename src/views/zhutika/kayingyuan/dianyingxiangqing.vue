@@ -17,23 +17,33 @@
     </div>
     <!-- 宣传片 -->
     <div class="xuanchuan">
-      <p>主题咖乐园<sup>TM</sup>宣传片 ™</p>
+      <p>主题咖乐园™宣传片</p>
       <p>喜剧·某国·2019·剧情</p>
     </div>
   </div>
 </template>
-
+c
 <style scoped>
 /* 宣传片 */
 .xuanchuan {
+  padding: 0 0 0 15px;
+  box-sizing: border-box;
   text-align: left;
-  width: 340px;
+  width: 375px;
   margin: 0 auto;
+  height: 65px;
+  border-bottom: 1px solid rgb(240, 240, 240);
 }
 
 .xuanchuan > p:nth-child(1) {
   font-size: 20px;
   font-weight: 600;
+}
+.xuanchuan > p:nth-child(2) {
+  font-size: 14px;
+  color: #c6c9cc;
+  font-weight: 600;
+  margin: -15px 0 0 0;
 }
 
 /* 视频 */
