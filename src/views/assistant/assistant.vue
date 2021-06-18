@@ -198,13 +198,11 @@ export default {
 .img_box {
   width: 100%;
   height: 9em;
-  /* background-color: bisque; */
   margin-top: 1em;
 }
 .img_box .van-image {
   width: 95%;
   height: 99.5%;
-  /* border-radius: 20px; */
 }
 .notice {
   width: 100%;
@@ -219,7 +217,6 @@ export default {
 .label {
   width: 100%;
   height: 2.5em;
-  /* background-color: bisque; */
   margin: 0.5em 0;
   display: flex;
 }
@@ -240,17 +237,14 @@ export default {
   padding-right: 1em;
   box-sizing: border-box;
   font-size: 14px;
-  /* font-weight: 600; */
 }
 .lcon_bar {
   width: 95%;
   height: auto;
   background-color: #f9f9f9;
-  /* display: flex; */
   margin: 0 auto;
   border-radius: 10px;
   text-align: left;
-  /* float: left; */
 }
 .lcon_bar .lcon_box {
   width: 18%;
@@ -259,12 +253,10 @@ export default {
   display: block;
   float: left;
   color: #666;
-  /* background-color: chartreuse; */
 }
 .lcon_bar .lcon_box .box_1 {
   width: 70%;
   height: 60%;
-  /* display: block; */
   margin: 0 auto;
   border-radius: 10px;
 }
