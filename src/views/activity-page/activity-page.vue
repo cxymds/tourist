@@ -33,14 +33,6 @@
     <tapbar></tapbar>
   </div>
 </template>
-<script>
-export default {
-  // beforeCreate(){
-  //   console.log(1111)
-  // }
-  
-}
-</script>
 <style scoped>
 router-link-active{
 color: green;   
