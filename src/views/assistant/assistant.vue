@@ -154,11 +154,15 @@
 
 <script>
 import menu from "@/components/Nav.vue";
-
+import { ref } from 'vue';
 export default {
   name: "cc",
   components: {
     tapbar: menu,
+  },
+  setup() {
+    const active = ref('assistant');
+    return { active };
   },
   methods: {
     tongzhi() {
