@@ -1,5 +1,5 @@
 <template>
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="active" active-color="rgb(139, 139, 139)" inactive-color="rgb(139, 139, 139)">
         <van-tabbar-item replace to="/recommend" name="recommend" icon="star-o">推荐</van-tabbar-item>
         <van-tabbar-item replace to="/activity" name="activity" icon="thumb-circle-o">活动</van-tabbar-item>
         <van-tabbar-item replace to="/assistant" name="assistant" icon="medal-o">咖助手</van-tabbar-item>

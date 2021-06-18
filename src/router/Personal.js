@@ -18,5 +18,10 @@ export default[
         path: '/pocket',
         name: 'pocket',
         component: () => import(/* webpackChunkName: "about" */ '@/views/Personal/pocket.vue')
+      },
+      {
+        path: '/myorder',
+        name: 'myorder',
+        component: () => import(/* webpackChunkName: "about" */ '@/views/Personal/order.vue')
       }
 ]//创建新路由示例----是一个数组
