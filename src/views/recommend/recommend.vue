@@ -117,7 +117,9 @@
 </template>
 <script>
 import menu from "@/components/Nav.vue";
+
 export default {
+
   setup() {
     const images = [
       "http://xmage.club/FoQaFZ3jRHNdkJlqSmfBPV4QZq98",
@@ -125,6 +127,7 @@ export default {
       "http://xmage.club/FsK-urgJDgIGkudo3tc2CrE6B6PG",
     ];
     return { images };
+    
   },
   name: "cc",
   components: {
