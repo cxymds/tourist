@@ -44,14 +44,12 @@
 export default {
     methods:{
         rehui(){
-            this.$router.push('/acfollow');
+            this.$router.go(-1);
         }
     }
 }
 </script>
 <style scoped>
-.introduce{
-}
 .rehui img{
     width: 35px;
     height: 35px;

@@ -52,7 +52,7 @@
 export default {
     methods:{
         rehui(){
-            this.$router.push('/acfollow');
+            this.$router.go(-1);
         }
     }
 }
