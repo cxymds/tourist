@@ -2,7 +2,7 @@
   <div>
     <img
       class="bgimg"
-      src="http://xmage.club/FmeQvYX9im5jhoHkc-VLxi0lpY5b"
+      :src="shuju.image"
       alt=""
     />
     <div class="rehui" @click="rehui">

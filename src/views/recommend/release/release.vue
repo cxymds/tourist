@@ -4,20 +4,18 @@
             <span class="return"><a href="/recommend"><van-icon name="arrow-left" />返回</a></span>
             <span class="head_text">精彩放送</span>
         </div>
-        <van-pull-refresh v-model="state.loading" @refresh="onRefresh">
-            <div class="box_text">
-                <div class="box_x"  v-for="item in shuju" :key="item.id"  @click="tabnei(item)">
-                   <div class="left_box">
-                       <img :src="item.image"/>
-                    </div>
-                   <div class="right_box">
-                        <div class="rightone">{{item.name}}</div>
-                        <div class="righttwo" >{{item.description}}</div>
-                        <div class="rightthree">{{item.time}}</div>
-                    </div> 
+        <div class="box_text">
+            <div class="box_x"  v-for="item in shuju" :key="item.id"  @click="tabnei(item)">
+                <div class="left_box">
+                    <img :src="item.image"/>
                 </div>
+                <div class="right_box">
+                    <div class="rightone">{{item.name}}</div>
+                    <div class="righttwo" >{{item.description}}</div>
+                    <div class="rightthree">{{item.time}}</div>
+                </div> 
             </div>
-        </van-pull-refresh>
+        </div>
     </div>
 </template>
 <script>
@@ -53,37 +51,18 @@ export default {
         console.log(err)
     })
   },
-  setup() {
-    const state = reactive({
-      count: 0,
-      loading: false,
-    });
-    const onRefresh = () => {
-      setTimeout(() => {
-        Toast('刷新成功');
-        state.loading = false;
-        state.count++;
-      }, 1000);
-    };
-    return {
-      state,
-      onRefresh,
-    };
-  },
 };
 </script>
 <style lang="less">
+
 .righttwo{
     overflow: hidden;
     white-space: nowrap;
     text-overflow:ellipsis
-    
-    
-
-
 }
 .box_x{
-    border-bottom:1px solid rgb(204, 204, 204);
+    border-bottom:1px solid rgb(224, 224, 224);
+    box-shadow: 5px 5px 10px rgb(224, 224, 224);
     margin-top: 10px;
 }
 .box_text .box_x .right_box .rightthree{
@@ -103,12 +82,16 @@ export default {
     width: 240px;
     height: 100%;
     flex-direction: column;
+    text-align: left;
     div{
-        width: 100%;
+        width: 97%;
         height: 33%;
         padding-left: 10px;
         // background-color: blueviolet;
         margin: 2px 0px;
+    }
+    .righttwo{
+        font-size: 14px;
     }
 }
 .head{

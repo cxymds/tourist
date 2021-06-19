@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="beg_box">
-      <div class=boxall v-for="item in list" :key="item.id" @click="tab">
+      <div class=boxall v-for="item in list" :key="item.id" @click="tab(item)">
         <div class="boxone"><img :src="item.active_img" alt=""></div>
         <div class="boxtwo">
           <div class="boxtwo1">{{item.name}}</div>
@@ -51,8 +51,10 @@
 import menu from "@/components/Nav.vue";
 export default {
   methods:{
-    tab(){
-       this.$router.push('/acxiangqing');
+    tab(item){
+      this.$router.push({
+          path:'/acxiangqing'
+      })
     },
     guanzhu(){
        this.$router.push('/acfollow');
