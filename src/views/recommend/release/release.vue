@@ -6,14 +6,14 @@
         </div>
         <van-pull-refresh v-model="state.loading" @refresh="onRefresh">
             <div class="box_text">
-                <div class="box_x"  v-for="item in list" :key="item.id">
+                <div class="box_x"  v-for="item in shuju" :key="item.id"  @click="tabnei(item)">
                    <div class="left_box">
-                       <img :src="item.active_img"/>
+                       <img :src="item.image"/>
                     </div>
                    <div class="right_box">
                         <div class="rightone">{{item.name}}</div>
-                        <div class="righttwo">{{item.position}}</div>
-                        <div class="rightthree">{{item.end_time}}</div>
+                        <div class="righttwo" >{{item.description}}</div>
+                        <div class="rightthree">{{item.time}}</div>
                     </div> 
                 </div>
             </div>
@@ -26,11 +26,17 @@ import { Toast } from 'vant';
 export default {
     data(){
         return{
-            list:[],
             shuju:[]
         }
     },
-  beforeCreate(){
+    methods:{
+        tabnei(item){
+            this.$router.push({
+                path:'/recommend/neirong/' + item.activity_id,
+            })
+        }
+    },
+    beforeCreate(){
     var that = this;
     const usertoken = window.localStorage.getItem("token")
     console.log(usertoken)
@@ -67,6 +73,31 @@ export default {
 };
 </script>
 <style lang="less">
+.righttwo{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis
+    
+    
+
+
+}
+.box_x{
+    border-bottom:1px solid rgb(204, 204, 204);
+    margin-top: 10px;
+}
+.box_text .box_x .right_box .rightthree{
+   font-size: 14px;
+   color: rgb(105, 105, 105);
+}
+.box_text .box_x .right_box .rightone{
+    line-height: 45px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.box_text .box_x .right_box .righttwo{
+    line-height: 15px;
+}
 .box_text .box_x .right_box{
     display: flex;
     width: 240px;
@@ -76,14 +107,14 @@ export default {
         width: 100%;
         height: 33%;
         padding-left: 10px;
-        background-color: blueviolet;
+        // background-color: blueviolet;
         margin: 2px 0px;
     }
 }
 .head{
     width: 100%;
     height: 2.5em; 
-    background-color: aquamarine;
+    // background-color: aquamarine;
     position: relative;
 }
 .head .head_text{
@@ -106,14 +137,14 @@ export default {
 .box_text{
     width: 100%; 
     height: 25em;
-    background-color: aqua;  
+    // background-color: aqua;  
 }
 .box_text .box_x{
     width: 100%;
     height: 7em;
     padding: 1em 0;
     display: flex;
-    background-color: bisque;
+    // background-color: bisque;
 }
 .box_text .box_x .left_box{
     width: 132px;

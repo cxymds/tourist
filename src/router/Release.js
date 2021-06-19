@@ -5,7 +5,7 @@ export default[
         component: () => import('@/views/recommend/release/release.vue')
       },
       {
-        path: '/recommend/neirong',
+        path: '/recommend/neirong/:id',
         name: 'neirong',
         component: () => import('@/views/recommend/release/neirong.vue')
       }
