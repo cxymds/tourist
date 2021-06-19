@@ -18,8 +18,8 @@
       </div>
     </div>
     <!-- 搜索 -->
-    <div class="sousuo" @click="sousuo">
-      <div class="sousuo_search">
+    <div class="sousuo">
+      <div class="sousuo_search" @click="sousuo">
         <van-search v-model="value" placeholder="哆啦A梦大电影[热搜]" />
       </div>
       <div class="fenlie" @click="fenlei">

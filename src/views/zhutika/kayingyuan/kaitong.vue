@@ -70,19 +70,14 @@
     </div>
 
     <van-action-sheet
+      v-link="{ path: 'kayingyuan' }"
       v-model:show="show"
       :actions="actions"
       @select="onSelect"
       title="支付方式"
       cancel-text="取消"
-      close-on-click-action
       @cancel="onCancel"
     />
-    <van-overlay :show="chenggong" @click="chenggong = false">
-      <div class="wrapper" @click.stop>
-        <div class="block" />
-      </div>
-    </van-overlay>
   </div>
 </template>
 
@@ -95,17 +90,20 @@ export default {
   setup() {
     const onClickLeft = () => Toast("返回");
     const show = ref(false);
-    const chenggong = ref(false);
     const actions = [
       { name: "主题币 (剩余:￥16800)" },
       { name: "咖先用 (剩余:￥10000)" },
       { name: "咖积分兑换 (不足)", disabled: true },
     ];
+
     const onSelect = (item) => {
       // 默认情况下点击选项时不会自动收起
       // 可以通过 close-on-click-action 属性开启自动收起
+      // close - on - click - action;
       show.value = false;
       Toast(item.name);
+      console.log(item.name);
+      console.log(item);
     };
     const onCancel = () => Toast("取消");
     return {
@@ -114,7 +112,6 @@ export default {
       actions,
       onSelect,
       onCancel,
-      chenggong,
     };
   },
   methods: {
@@ -122,7 +119,7 @@ export default {
       this.$router.go(-1);
     },
     cheng() {
-      this.$$route.push({ path: "kayingyuan" });
+      this.$router.push({ path: "kayingyuan" });
     },
   },
   data() {
