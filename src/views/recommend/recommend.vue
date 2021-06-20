@@ -24,7 +24,7 @@
         <van-image src="http://xmage.club/FivkLfogb_bqAra5aeinoXFCxuZe" />
         <span>美食</span>
       </a>
-      <a href="" class="in_box">
+      <a href="/service" class="in_box">
         <van-image src="http://xmage.club/FuHwcaewcZxL8dMIxCIhQ7fLaqV4" />
         <span>娱乐</span>
       </a>

@@ -103,7 +103,7 @@ export default {
   div{
     width: 100%;
     height: 33%;
-    background-color: cadetblue;
+    // background-color: cadetblue;
     margin: 2px 0;
   }
 
@@ -119,7 +119,7 @@ export default {
 }
 .beg_box .boxall>div{
   width: 135px;
-  background-color: burlywood;
+  // background-color: burlywood;
   height: 100%;
   margin: 0 2px;
 }
@@ -129,7 +129,7 @@ export default {
   height: 120px;
   display: flex;
   flex-direction: row;
-  background-color: blueviolet;
+  // background-color: blueviolet;
 }
 bady{
   height: 100%;
@@ -137,13 +137,13 @@ bady{
 .head_box{
   width: 100%;
   height: 2.5em;
-  background-color: aqua; 
+  // background-color: aqua; 
   display: flex;
 }
 .head_box .left_box{
   width: 50%;
   height: 100%;
-  background-color:bisque ;
+  // background-color:bisque ;
   font-size: 20px;
   font-weight: 600;
   text-align: left;
@@ -163,7 +163,7 @@ bady{
 .week{
   width: 100%;
   display: flex;
-  background-color: chartreuse ;
+  // background-color: chartreuse ;
 }
 .week .week_box{
   width: 13%;
@@ -177,7 +177,7 @@ bady{
   height: 3.5em;
   line-height: 3.5em;
   border-radius: 10px;
-  background-color: coral;
+  // background-color: coral;
 }
 .beg_box{
   width: 100%;
