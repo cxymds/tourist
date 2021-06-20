@@ -64,20 +64,48 @@
         class="kaitong_btn"
         block
         round
-        @click="show = true"
+        is-link
+        @click="showPopup"
         >开通 ￥328 套餐</van-button
       >
     </div>
+    <!-- @click="show = true" -->
 
-    <van-action-sheet
-      v-link="{ path: 'kayingyuan' }"
+    <!-- <van-cell>展示弹出层 </van-cell> -->
+
+    <van-popup
       v-model:show="show"
-      :actions="actions"
-      @select="onSelect"
-      title="支付方式"
-      cancel-text="取消"
-      @cancel="onCancel"
-    />
+      round
+      position="bottom"
+      :style="{ height: '30%' }"
+    >
+      <!-- 支付方式 -->
+      <div class="zhifu">支付方式</div>
+      <!-- 主题币 -->
+      <div
+        class="zhutibi"
+        @click="
+          zhifuchenggong();
+          show = false;
+        "
+      >
+        主题币 (剩余:￥16800)
+      </div>
+      <!-- 咖先用 -->
+      <div
+        class="kaxianyong"
+        @click="
+          zhifuchenggong();
+          show = false;
+        "
+      >
+        咖先用 (剩余:￥10000)
+      </div>
+      <!-- 咖积分 -->
+      <div class="kajifen">咖积分兑换 (不足)</div>
+      <!-- 取消 -->
+      <div class="quxiao" @click="show = false">取消</div>
+    </van-popup>
   </div>
 </template>
 
@@ -90,36 +118,44 @@ export default {
   setup() {
     const onClickLeft = () => Toast("返回");
     const show = ref(false);
-    const actions = [
-      { name: "主题币 (剩余:￥16800)" },
-      { name: "咖先用 (剩余:￥10000)" },
-      { name: "咖积分兑换 (不足)", disabled: true },
-    ];
-
-    const onSelect = (item) => {
-      // 默认情况下点击选项时不会自动收起
-      // 可以通过 close-on-click-action 属性开启自动收起
-      // close - on - click - action;
-      show.value = false;
-      Toast(item.name);
-      console.log(item.name);
-      console.log(item);
+    const showPopup = () => {
+      show.value = true;
     };
-    const onCancel = () => Toast("取消");
+    // const actions = [
+    //   { name: "主题币 (剩余:￥16800)" },
+    //   { name: "咖先用 (剩余:￥10000)" },
+    //   { name: "咖积分兑换 (不足)", disabled: true },
+    // ];
+
+    // const onSelect = (item) => {
+    //   // 默认情况下点击选项时不会自动收起
+    //   // 可以通过 close-on-click-action 属性开启自动收起
+    //   // close - on - click - action;
+    //   show.value = false;
+    //   Toast(item.name);
+    //   console.log(item.name);
+    //   console.log(item);
+    // };
+    // const onCancel = () => Toast("取消");
     return {
       onClickLeft,
       show,
-      actions,
-      onSelect,
-      onCancel,
+      // actions,
+      // onSelect,
+      // onCancel,
+      showPopup,
     };
   },
   methods: {
     onClickLeft() {
       this.$router.go(-1);
     },
-    cheng() {
-      this.$router.push({ path: "kayingyuan" });
+    zhifuchenggong() {
+      Toast.success("支付成功");
+      var time;
+      time = setTimeout(() => {
+        this.$router.push({ path: "kayingyuan" });
+      }, 2000);
     },
   },
   data() {
@@ -164,6 +200,24 @@ html {
 }
 </style>
 <style scoped>
+.zhifu,
+.zhutibi,
+.kaxianyong,
+.kajifen,
+.quxiao {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+.zhifu {
+  font-size: 20px;
+  font-weight: 600;
+}
+.kajifen {
+  color: #b8b8b8;
+}
+/* 213 */
 .wrapper {
   display: flex;
   align-items: center;
