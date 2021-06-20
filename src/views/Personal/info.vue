@@ -13,7 +13,7 @@
                 <span>头像</span>
             </div>
             <div class="infotworight">
-                <img src="http://xmage.club/FgLS94vOs8S1x7DJKBJzMcDofdP_" alt="">
+                <img src="http://xmage.club/FrWxwkhyVn2tiAFR2HTRKvPw_KWT" alt="">
             </div>
         </div>
     </div>
@@ -39,10 +39,10 @@ export default {
             list:[
                 {
                     left:'昵称',
-                    right:'请叫我大佐'
+                    right:'蜡笔小新'
                 },{
                     left:'真实姓名',
-                    right:'宫本井上'
+                    right:'蜡笔大新'
                 },{
                     left:'性别',
                     right:'男'

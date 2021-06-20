@@ -10,9 +10,9 @@
             <div class="in_box">
                 <div class="top_box">
                     <a href="/info" class="inform_box">
-                        <div class="left_img"><van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" /></div>
+                        <div class="left_img"><van-image round width="5rem" height="5rem" src="http://xmage.club/FrWxwkhyVn2tiAFR2HTRKvPw_KWT" /></div>
                         <div class="text">
-                            <span class="text_top">我叫新之助</span>
+                            <span class="text_top">蜡笔小新</span>
                             <span class="text_buttom">vip2</span>
                         </div>
                         <div class="in_text">个人信息 ></div>

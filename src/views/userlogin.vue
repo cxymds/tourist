@@ -67,8 +67,10 @@ import { Toast } from "vant";
 import { ref } from "vue";
 import * as qiniu from "qiniu-js";
 import { getCurrentInstance } from "vue";
+import { Dialog } from 'vant';
 
 export default {
+  
   data() {
     return {};
   },
@@ -91,7 +93,6 @@ export default {
         console.log(err);
       });
   },
-
   setup() {
     let { proxy } = getCurrentInstance();
     const submit = (e) => {
@@ -184,7 +185,6 @@ export default {
     const onFailed = (errorInfo) => {
       console.log("failed", errorInfo);
     };
-
     return {
       state,
       proxy,
@@ -205,7 +205,8 @@ export default {
           this.$router.push({ path: "recommend" });
         }, 1100);
       } else {
-        return false;
+        // return false;
+        Dialog({ message: '请输入相同的密码' });
       }
     },
     tab() {
