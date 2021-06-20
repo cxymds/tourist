@@ -330,7 +330,7 @@ export default {
   },
   methods: {
     fanhui() {
-      this.$router.go(-1);
+      this.$router.push({ path: "assistant" });
     },
     kaitong() {
       this.$router.push({ path: "kaitong" });
